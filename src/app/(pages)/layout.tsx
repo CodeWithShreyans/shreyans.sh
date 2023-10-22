@@ -1,12 +1,14 @@
 import "@/styles/globals.css"
 
 import { Inter } from "next/font/google"
-import { headers } from "next/headers"
+
+// import { headers } from "next/headers"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { TRPCReactProvider } from "@/trpc/react"
+
+// import { TRPCReactProvider } from "@/trpc/react"
 
 const inter = Inter({
     subsets: ["latin"],
@@ -82,17 +84,17 @@ export default function RootLayout({
                     "flex flex-col items-center justify-center gap-2",
                 )}
             >
-                <TRPCReactProvider headers={headers()}>
-                    <ThemeProvider
-                        enableSystem
-                        attribute="class"
-                        defaultTheme="system"
-                    >
-                        {/* <main className="flex flex-col gap-2 min-h-full items-center justify-center"> */}
-                        {children}
-                        {/* </main> */}
-                    </ThemeProvider>
-                </TRPCReactProvider>
+                {/* <TRPCReactProvider headers={headers()}> */}
+                <ThemeProvider
+                    enableSystem
+                    attribute="class"
+                    defaultTheme="system"
+                >
+                    {/* <main className="flex flex-col gap-2 min-h-full items-center justify-center"> */}
+                    {children}
+                    {/* </main> */}
+                </ThemeProvider>
+                {/* </TRPCReactProvider> */}
             </body>
         </html>
     )
