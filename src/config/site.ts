@@ -7,6 +7,6 @@ export const siteConfig = {
         twitter: "https://twitter.com/Destroyer_Xyz",
         github: "https://github.com/destroyerxyz/shreyans.sh",
     },
-}
+} as const
 
 export type SiteConfig = typeof siteConfig

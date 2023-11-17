@@ -1,36 +1,47 @@
+import Link from "next/link"
+
+import { allPosts } from "contentlayer/generated"
+
+import { Button } from "@/components/ui/button"
+
+export const metadata = {
+    title: { default: "Shreyans' Blog", template: `%s | Shreyans' Blog` },
+}
+
 const Page = () => {
     return (
-        <main className="flex h-full w-full flex-col items-center">
-            <ul className="flex w-1/2 flex-col gap-2">
-                {/* {initialPosts.map((post) => (
-                    <li key={post.id}>
+        <main className="flex w-full flex-col items-center">
+            <ul className="flex w-full flex-col gap-2 px-4">
+                {allPosts.map((post) => (
+                    <li key={post._id}>
                         <Button
                             asChild
                             className="flex h-auto w-auto cursor-pointer flex-col text-left"
                             variant="ghost"
                         >
-                            <Link href="/blog">
-                                <p className="w-full text-sm text-muted-foreground">
-                                    {new Date(
-                                        post.publishedAt,
-                                    ).toLocaleDateString("en-US", {
-                                        month: "short",
-                                        day: "numeric",
-                                        year: "numeric",
-                                    })}
+                            <Link href={post.url}>
+                                <p className="w-full text-base text-muted-foreground">
+                                    {new Date(post.date).toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            month: "short",
+                                            day: "numeric",
+                                            year: "numeric",
+                                        },
+                                    )}
                                 </p>
 
                                 <h2 className="w-full text-xl text-foreground">
                                     {post.title}
                                 </h2>
 
-                                <p className="w-full text-xs text-muted-foreground">
+                                <p className="w-full text-sm text-muted-foreground">
                                     {post.brief}
                                 </p>
                             </Link>
                         </Button>
                     </li>
-                ))} */}
+                ))}
             </ul>
         </main>
     )

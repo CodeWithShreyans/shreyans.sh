@@ -1,4 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import rehypeSlug from "rehype-slug"
+import remarkGfm from "remark-gfm"
 
 const Post = defineDocumentType(() => ({
     name: "Post",
@@ -10,9 +12,9 @@ const Post = defineDocumentType(() => ({
             description: "The title of the post",
             required: true,
         },
-        desc: {
+        brief: {
             type: "string",
-            description: "A short description of the post",
+            description: "A short brief of the post",
             required: true,
         },
         date: {
@@ -32,4 +34,12 @@ const Post = defineDocumentType(() => ({
 export default makeSource({
     contentDirPath: "posts",
     documentTypes: [Post],
+    mdx: {
+        rehypePlugins: [
+            // @ts-ignore
+            // rehypePrism,
+            rehypeSlug,
+        ],
+        remarkPlugins: [remarkGfm],
+    },
 })

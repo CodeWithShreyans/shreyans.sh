@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import { type Config } from "tailwindcss"
+
 module.exports = {
     darkMode: ["class"],
     content: [
@@ -16,6 +17,10 @@ module.exports = {
             },
         },
         extend: {
+            fontFamily: {
+                sans: ["var(--font-geist-sans)"],
+                mono: ["var(--font-geist-mono)"],
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -58,19 +63,24 @@ module.exports = {
             },
             keyframes: {
                 "accordion-down": {
-                    from: { height: 0 },
+                    from: { height: "0" },
                     to: { height: "var(--radix-accordion-content-height)" },
                 },
                 "accordion-up": {
                     from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: 0 },
+                    to: { height: "0" },
+                },
+                "rotate-clock-180": {
+                    from: { transform: "rotate(0deg)" },
+                    to: { transform: "rotate(180deg)" },
                 },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "rotate-clock-180": "rotate-180 0.2s ease-out",
             },
         },
     },
     plugins: [require("tailwindcss-animate")],
-}
+} as Config

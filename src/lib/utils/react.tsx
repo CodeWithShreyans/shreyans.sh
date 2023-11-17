@@ -60,14 +60,14 @@ const usePrefersReducedMotion = () => {
 }
 
 type BoopConfig = {
-    x: number | undefined
-    y: number | undefined
-    rotation: number | undefined
-    scale: number | undefined
-    timing: number | undefined
-    springConfig: {
-        tension: number | undefined
-        friction: number | undefined
+    x?: number
+    y?: number
+    rotation?: number
+    scale?: number
+    timing?: number
+    springConfig?: {
+        tension?: number
+        friction?: number
     }
 }
 const useBoop = ({

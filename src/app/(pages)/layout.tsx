@@ -1,7 +1,12 @@
 import "@/styles/globals.css"
 
-import { Inter } from "next/font/google"
+import { type Metadata, type Viewport } from "next"
 
+import { GeistMono } from "geist/font/mono"
+import { GeistSans } from "geist/font/sans"
+import { Provider as BalancerProvider } from "react-wrap-balancer"
+
+import Nav from "@/components/nav"
 // import { headers } from "next/headers"
 
 import { ThemeProvider } from "@/components/theme-provider"
@@ -10,14 +15,9 @@ import { cn } from "@/lib/utils"
 
 // import { TRPCReactProvider } from "@/trpc/react"
 
-const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-sans",
-})
-
 // TODO: Metadata
-export const metadata = {
-    title: { default: siteConfig.name, template: `%s - ${siteConfig.name}` },
+export const metadata: Metadata = {
+    title: siteConfig.name,
     description: siteConfig.description,
     keywords: [
         // "Blog",
@@ -35,10 +35,6 @@ export const metadata = {
         },
     ],
     creator: "Shreyans Jain",
-    themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "white" },
-        { media: "(prefers-color-scheme: dark)", color: "black" },
-    ],
     openGraph: {
         type: "website",
         locale: "en_US",
@@ -70,18 +66,31 @@ export const metadata = {
     // manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
+export const viewport: Viewport = {
+    themeColor: [
+        { media: "(prefers-color-scheme: light)", color: "white" },
+        { media: "(prefers-color-scheme: dark)", color: "black" },
+    ],
+}
+
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
     return (
-        <html className="h-full" lang="en">
+        <html
+            className={cn(
+                `${GeistSans.variable} ${GeistMono.variable}`,
+                "min-h-full",
+            )}
+            lang="en"
+        >
             <body
                 className={cn(
-                    `${inter.variable}`,
-                    "h-full p-4 pt-8",
+                    "h-full py-4",
                     "flex flex-col items-center justify-center gap-2",
+                    "mx-auto sm:max-w-xl md:max-w-3xl",
                 )}
             >
                 {/* <TRPCReactProvider headers={headers()}> */}
@@ -90,9 +99,10 @@ export default function RootLayout({
                     attribute="class"
                     defaultTheme="system"
                 >
-                    {/* <main className="flex flex-col gap-2 min-h-full items-center justify-center"> */}
-                    {children}
-                    {/* </main> */}
+                    <Nav />
+                    <BalancerProvider preferNative={true}>
+                        <main className="h-full w-full">{children}</main>
+                    </BalancerProvider>
                 </ThemeProvider>
                 {/* </TRPCReactProvider> */}
             </body>

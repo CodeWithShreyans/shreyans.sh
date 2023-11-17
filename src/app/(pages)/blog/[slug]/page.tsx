@@ -1,29 +1,35 @@
 import { allPosts } from "contentlayer/generated"
 // import { format, parseISO } from "date-fns"
-import { getMDXComponent } from "next-contentlayer/hooks"
+import { useMDXComponent } from "next-contentlayer/hooks"
+
+import components from "@/components/mdx"
 
 export const generateStaticParams = () =>
-    allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
+    allPosts.map((post) => ({
+        slug: post._raw.flattenedPath,
+    }))
 
-// export const generateMetadata = ({ params }) => {
-//     const post = allPosts.find(
-//         (post) => post._raw.flattenedPath === params.slug,
-//     )
-//     return { title: post.title }
-// }
+export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+    console.log(allPosts)
+    return {
+        title: `${allPosts.find(
+            (post) => post._raw.flattenedPath === params.slug,
+        )?.title} | Shreyans' Blog`,
+    }
+}
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
     const post = allPosts.find(
         (post) => post._raw.flattenedPath === params.slug,
     )
 
-    const Content = getMDXComponent(post?.body.code ?? "")
+    const Content = useMDXComponent(post?.body.code ?? "")
 
     return (
-        <article className="mx-auto max-w-xl py-8">
-            <div className="mb-8 text-center">
+        <article>
+            <div className="flex flex-col pb-4">
                 <time
-                    className="mb-1 text-xs text-gray-600"
+                    className="text-xl text-muted-foreground"
                     dateTime={post?.date}
                 >
                     {new Date(post?.date ?? "").toLocaleDateString("en-US", {
@@ -32,9 +38,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                         year: "numeric",
                     })}
                 </time>
-                <h1>{post?.title}</h1>
+                <h1 className="text-5xl">{post?.title}</h1>
             </div>
-            <Content />
+            <div className="flex flex-col gap-2" id="content">
+                {/* @ts-expect-error Code is async function */}
+                <Content components={components} />
+            </div>
         </article>
     )
 }
