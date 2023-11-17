@@ -12,9 +12,6 @@ const config = {
     compiler: {
         removeConsole: { exclude: ["error"] },
     },
-    experimental: {
-        ppr: true,
-    },
 }
 
 // @ts-expect-error Contentlayer NextConfig type issue
