@@ -1,23 +1,41 @@
-// import { api } from "@/trpc/server"
+import type { StaticImageData } from "next/image"
 
+import { get } from "http"
+
+import Image from "next/image"
+
+import { DateTime, Duration } from "luxon"
 import Balancer from "react-wrap-balancer"
 
-export const revalidate = 3600 // 1 hour
+import ProfilePic from "@/../public/profile-pic.png"
+import BirthTime from "@/components/birth-time"
 
-export default function Home() {
-    // const hello = await api.post.hello.query({ text: "from tRPC" })
+// import { api } from "@/trpc/server"
 
+// export const revalidate = 3600 // 1 hour
+
+const Home = () => {
     return (
         <>
-            <div>
-                <p>
-                    <Balancer>
-                        {
-                            "Hey! It's-a me Shreyans! Your friendly neighborhood software dev. I'm a 16-year-old full-stack web dev from Agra, India 🇮🇳. Also a student and entrepreneur. I'm into everything from tech and business to finance, law, physics, food, and travel. Here's a few things I've worked on:"
-                        }
-                    </Balancer>
+            <div className="flex flex-col gap-2">
+                <Image
+                    alt="Profile Picture"
+                    className="w-44 rounded-full"
+                    src={ProfilePic}
+                />
+                <h1 className="text-3xl font-semibold">Hey there, I&apos;m Shreyans!</h1>
+                <p className="text-md font-medium tracking-wide">
+                    
+                    I&apos;m about <BirthTime /> old. A full-stack web
+                    dev from India 🇮🇳. Also a student and entrepreneur. I&apos;m
+                    into everything from tech and business to finance, law,
+                    science, food, and travel.
+                    
                 </p>
             </div>
+            <div></div>
         </>
     )
 }
+
+export default Home

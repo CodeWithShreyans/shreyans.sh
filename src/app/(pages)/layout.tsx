@@ -88,9 +88,9 @@ export default function RootLayout({
         >
             <body
                 className={cn(
-                    "h-full py-4",
+                    "h-full p-4",
                     "flex flex-col items-center justify-center gap-2",
-                    "mx-auto sm:max-w-xl md:max-w-3xl",
+                    "mx-auto sm:max-w-xl md:max-w-2xl",
                 )}
             >
                 {/* <TRPCReactProvider headers={headers()}> */}
@@ -100,7 +100,7 @@ export default function RootLayout({
                     defaultTheme="system"
                 >
                     <Nav />
-                    <BalancerProvider preferNative={true}>
+                    <BalancerProvider preferNative={false}>
                         <main className="h-full w-full">{children}</main>
                     </BalancerProvider>
                 </ThemeProvider>
