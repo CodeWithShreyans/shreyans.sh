@@ -2,6 +2,7 @@ import "@/styles/globals.css"
 
 import { type Metadata, type Viewport } from "next"
 
+import { Slot } from "@radix-ui/react-slot"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 import { Provider as BalancerProvider } from "react-wrap-balancer"
@@ -88,9 +89,7 @@ export default function RootLayout({
         >
             <body
                 className={cn(
-                    "h-full p-4",
-                    "flex flex-col items-center justify-center gap-2",
-                    "mx-auto sm:max-w-xl md:max-w-2xl",
+                    "mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-2 p-4 md:max-w-2xl",
                 )}
             >
                 {/* <TRPCReactProvider headers={headers()}> */}
@@ -101,7 +100,8 @@ export default function RootLayout({
                 >
                     <Nav />
                     <BalancerProvider preferNative={false}>
-                        <main className="h-full w-full">{children}</main>
+                        {/* @ts-expect-error Radix ReactNode type issue */}
+                        <Slot className="h-full w-full">{children}</Slot>
                     </BalancerProvider>
                 </ThemeProvider>
                 {/* </TRPCReactProvider> */}

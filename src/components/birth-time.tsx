@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Badge } from "./ui/badge"
+import { InlineBadge } from "./ui/badge"
 
 const getTimeElapsed = (startDate: number) => {
     const timeDifference = Date.now() - startDate
@@ -24,20 +23,16 @@ const getTimeElapsed = (startDate: number) => {
 }
 
 const BirthTime = () => {
-    const [time, setTime] = useState(getTimeElapsed(1179628980000))
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTime((time) => {
-                return { ...time, minutes: time.minutes++ }
-            })
-        }, 60000)
-
-        return () => clearInterval(timer)
-    }, [])
+    const time = getTimeElapsed(1179628980000)
 
     return (
-        <Badge variant="secondary" className="tabular-nums text-sm"> {`${time.years} years ${time.months} months ${time.days} days ${time.hours} hours and ${time.minutes} minutes`} </Badge>
+        <InlineBadge className="px-2 text-sm tabular-nums" variant="secondary">
+            {`${time.years} years ` +
+                (time.months != 0 ? `${time.months} months ` : "") +
+                (time.days != 0 ? `${time.days} days ` : "") +
+                (time.hours != 0 ? `${time.hours} hours ` : "") +
+                (time.minutes != 0 ? `and ${time.minutes} minutes` : "")}
+        </InlineBadge>
     )
 }
 

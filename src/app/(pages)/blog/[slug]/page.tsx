@@ -26,25 +26,30 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     const Content = useMDXComponent(post?.body.code ?? "")
 
     return (
-        <article>
-            <div className="flex flex-col pb-4">
-                <time
-                    className="text-xl text-muted-foreground"
-                    dateTime={post?.date}
-                >
-                    {new Date(post?.date ?? "").toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                    })}
-                </time>
-                <h1 className="text-5xl">{post?.title}</h1>
-            </div>
-            <div className="flex flex-col gap-2" id="content">
-                {/* @ts-expect-error Code is async function */}
-                <Content components={components} />
-            </div>
-        </article>
+        <main>
+            <article>
+                <div className="flex flex-col pb-4">
+                    <time
+                        className="text-xl text-muted-foreground"
+                        dateTime={post?.date}
+                    >
+                        {new Date(post?.date ?? "").toLocaleDateString(
+                            "en-US",
+                            {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                            },
+                        )}
+                    </time>
+                    <h1 className="text-5xl">{post?.title}</h1>
+                </div>
+                <div className="flex flex-col gap-2" id="content">
+                    {/* @ts-expect-error Code is async function */}
+                    <Content components={components} />
+                </div>
+            </article>
+        </main>
     )
 }
 
