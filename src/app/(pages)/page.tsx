@@ -1,11 +1,11 @@
 import { type ReactNode } from "react"
 
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 
 import { Github } from "lucide-react"
 
-import ProfilePic from "@/../public/profile-pic.jpg"
+// import ProfilePic from "@/../public/profile-pic.jpg"
 import BirthTime from "@/components/birth-time"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -37,7 +37,7 @@ const Project = ({
                         {title}
                     </h2>
                     {githubLink ? (
-                        <object className="mb-[-0.03125rem] self-end rounded-full bg-foreground text-background transition-colors hover:bg-accent hover:text-foreground">
+                        <object className="mb-[-0.03125rem] h-[1.25em] w-[1.25em] self-end rounded-full bg-foreground text-background transition-colors hover:bg-accent hover:text-foreground">
                             <Link href={githubLink}>
                                 <Github
                                     absoluteStrokeWidth={true}
