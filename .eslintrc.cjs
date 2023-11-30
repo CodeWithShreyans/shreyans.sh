@@ -50,10 +50,12 @@ const config = {
                 reservedFirst: true,
             },
         ],
+
+        "react/prop-types": ["error", { ignore: ["className", "sideOffset"] }],
     },
     settings: {
         tailwindcss: {
-            callees: ["twmerge", "clsx", "cn"],
+            callees: ["twmerge", "cva", "cn"],
         },
     },
 }

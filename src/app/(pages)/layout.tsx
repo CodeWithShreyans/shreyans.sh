@@ -1,16 +1,18 @@
-import "@/styles/globals.css"
+import "./globals.css"
 
 import { type Metadata, type Viewport } from "next"
 
 import { Slot } from "@radix-ui/react-slot"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
+import { AlertCircle } from "lucide-react"
 import { Provider as BalancerProvider } from "react-wrap-balancer"
 
 import Nav from "@/components/nav"
 // import { headers } from "next/headers"
 
 import { ThemeProvider } from "@/components/theme-provider"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
@@ -99,6 +101,14 @@ export default function RootLayout({
                     defaultTheme="system"
                 >
                     <Nav />
+                    <Alert variant="warning">
+                        <AlertCircle className="h-5 w-5" />
+                        <AlertTitle>WIP</AlertTitle>
+                        <AlertDescription>
+                            This site is still very much a work in progress. Not
+                            even 1.0 yet.
+                        </AlertDescription>
+                    </Alert>
                     <BalancerProvider preferNative={false}>
                         {/* @ts-expect-error Radix ReactNode type issue */}
                         <Slot className="h-full w-full">{children}</Slot>

@@ -9,6 +9,17 @@ await import("./src/env.mjs")
 /** @type {import("next").NextConfig} */
 const config = {
     reactStrictMode: true,
+    experimental: {
+        ppr: true,
+        useDeploymentId: true,
+        useDeploymentIdServerActions: true,
+    },
+    compiler: {
+        removeConsole:
+            process.env.NODE_ENV === "production"
+                ? { exclude: ["error"] }
+                : false,
+    },
 }
 
 // @ts-expect-error Contentlayer NextConfig type issue

@@ -26,7 +26,10 @@ const BirthTime = () => {
     const time = getTimeElapsed(1179628980000)
 
     return (
-        <InlineBadge className="px-2 text-sm tabular-nums" variant="secondary">
+        <InlineBadge
+            className="px-2 text-sm tabular-nums text-primary/75"
+            variant="secondary"
+        >
             {`${time.years} years ` +
                 (time.months != 0 ? `${time.months} months ` : "") +
                 (time.days != 0 ? `${time.days} days ` : "") +
