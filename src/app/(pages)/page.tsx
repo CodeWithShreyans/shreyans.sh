@@ -30,7 +30,7 @@ const Project = ({
             className="flex h-full w-full flex-col items-start justify-start gap-2 text-start"
             variant="ghost"
         >
-            <Link className="space-y-1" href={link ?? ""}>
+            <Link className="space-y-1" href={link ?? ""} target="_blank">
                 <div className="flex flex-row gap-1">
                     <h2 className="font-mono underline underline-offset-4">
                         {title}
@@ -54,7 +54,7 @@ const Project = ({
             </Link>
             {githubLink ? (
                 <Button asChild className="h-auto w-auto p-0" variant="link">
-                    <Link href={githubLink}>
+                    <Link href={githubLink} target="_blank">
                         Github <ArrowUpRight className="-ml-0.5" size={20} />
                     </Link>
                 </Button>
