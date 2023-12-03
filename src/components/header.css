@@ -10,6 +10,8 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.nav-logo-link:hover {
-    transform: translateY(-4px);
+@media (min-width: 768px) {
+    .nav-logo-link:hover {
+        transform: translateY(-4px);
+    }
 }

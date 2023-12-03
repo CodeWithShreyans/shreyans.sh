@@ -1,7 +1,5 @@
 "use client"
 
-import { InlineBadge } from "./ui/badge"
-
 const getTimeElapsed = (startDate: number) => {
     const timeDifference = Date.now() - startDate
 
@@ -17,25 +15,20 @@ const getTimeElapsed = (startDate: number) => {
     const months = Math.floor((timeDifference / millisecondsInMonth) % 12)
     const days = Math.floor((timeDifference / millisecondsInDay) % 30.44) // Approximate days in a month
     const hours = Math.floor((timeDifference / millisecondsInHour) % 24)
-    const minutes = Math.floor((timeDifference / millisecondsInMinute) % 60)
 
-    return { years, months, days, hours, minutes }
+    return { years, months, days, hours }
 }
 
 const BirthTime = () => {
     const time = getTimeElapsed(1179628980000)
 
     return (
-        <InlineBadge
-            className="px-2 text-sm tabular-nums text-primary/75"
-            variant="secondary"
-        >
+        <span className="font-semibold">
             {`${time.years} years ` +
                 (time.months != 0 ? `${time.months} months ` : "") +
                 (time.days != 0 ? `${time.days} days ` : "") +
-                (time.hours != 0 ? `${time.hours} hours ` : "") +
-                (time.minutes != 0 ? `and ${time.minutes} minutes` : "")}
-        </InlineBadge>
+                (time.hours != 0 ? `and ${time.hours} hours ` : "")}
+        </span>
     )
 }
 

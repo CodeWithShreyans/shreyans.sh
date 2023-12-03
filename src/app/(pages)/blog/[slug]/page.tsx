@@ -3,6 +3,7 @@ import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
 import components from "@/components/mdx"
+import { Separator } from "@/components/shadcn/separator"
 
 export const generateStaticParams = () =>
     allPosts.map((post) => ({
@@ -26,9 +27,9 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     const Content = useMDXComponent(post?.body.code ?? "")
 
     return (
-        <main>
-            <article>
-                <div className="flex flex-col pb-4">
+        <main className="pb-4">
+            <article className="space-y-3">
+                <div className="space-y-0.5 px-1">
                     <time
                         className="text-xl text-muted-foreground"
                         dateTime={post?.date}
@@ -42,9 +43,10 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                             },
                         )}
                     </time>
-                    <h1 className="text-5xl">{post?.title}</h1>
+                    <h1 className="text-5xl tracking-tight">{post?.title}</h1>
                 </div>
-                <div className="flex flex-col gap-2" id="content">
+                <Separator className="my-2 py-0.5" />
+                <div className="flex flex-col gap-3 px-1" id="content">
                     {/* @ts-expect-error Code is async function */}
                     <Content components={components} />
                 </div>

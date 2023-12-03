@@ -12,12 +12,12 @@ const H1 = ({
     rest: React.HTMLProps<HTMLHeadingElement>
 }) => {
     return (
-        <LinkButton className="no-underline" href={`#${id}`}>
+        <LinkButton className="pt-4 no-underline" href={`#${id}`} id={id}>
             <h2
-                className="-ml-1 flex flex-row items-center text-3xl font-semibold underline-offset-4 opacity-80 hover:underline hover:opacity-[1.5]"
+                className="inline-flex items-center text-3xl font-semibold underline-offset-4 opacity-80 hover:underline hover:opacity-[1.5] [&>svg]:opacity-0 [&>svg]:hover:opacity-100"
                 {...rest}
             >
-                <Hash size={28} /> {children}
+                {children} <Hash className="transition-opacity" size={28} />
             </h2>
         </LinkButton>
     )

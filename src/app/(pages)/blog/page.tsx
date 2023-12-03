@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import { allPosts } from "contentlayer/generated"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/shadcn/button"
 
 export const metadata = {
     title: { default: "Shreyans' Blog", template: `%s | Shreyans' Blog` },

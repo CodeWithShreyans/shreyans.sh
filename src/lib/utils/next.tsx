@@ -2,8 +2,6 @@
 
 import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
-
 import { cn } from "."
 
 const LinkButton = (props: React.ComponentPropsWithRef<typeof Link>) => {

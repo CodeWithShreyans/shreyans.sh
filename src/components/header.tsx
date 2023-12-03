@@ -8,29 +8,32 @@ import LightLogo from "@/../public/logo-light.svg"
 // import Logo from "@/../public/logo.png"
 import { LinkButton } from "@/lib/utils/next"
 
-import "./nav.css"
+import "./header.css"
 
-const Nav = () => {
+const Header = () => {
     return (
-        <nav className="flex h-[5vh] w-full items-center justify-between p-1">
+        <header
+            className="mt-2 flex h-[5vh] w-full items-center justify-between p-1"
+            id="header"
+        >
             {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
             <Link className="nav-logo-link aspect-square h-full" href="/">
                 <Image
                     alt="Home"
-                    className="-ml-3 aspect-square h-full rounded-full dark:hidden"
+                    className="-ml-2 aspect-square h-full rounded-full dark:hidden"
                     src={LightLogo as StaticImageData}
                 />
                 <Image
                     alt="Home"
-                    className="-ml-3 hidden aspect-square h-full rounded-full dark:block"
+                    className="-ml-2 hidden aspect-square h-full rounded-full dark:block"
                     src={DarkLogo as StaticImageData}
                 />
             </Link>
             <LinkButton className="no-underline hover:underline" href="/blog">
                 Blog
             </LinkButton>
-        </nav>
+        </header>
     )
 }
 
-export default Nav
+export default Header

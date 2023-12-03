@@ -1,64 +1,73 @@
 import { type ReactNode } from "react"
 
-// import Image from "next/image"
 import Link from "next/link"
 
-import { Github } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 
-// import ProfilePic from "@/../public/profile-pic.jpg"
 import BirthTime from "@/components/birth-time"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/shadcn/badge"
+import { Button } from "@/components/shadcn/button"
+import { Separator } from "@/components/shadcn/separator"
+import { cn } from "@/lib/utils"
 
-// import { api } from "@/trpc/server"
-
-// export const revalidate = 3600 // 1 hour
+export const revalidate = 3600 // 1 hour
 
 const Project = ({
     title,
     link,
     githubLink,
     description,
+    badge,
 }: {
     title: string
-    link: string
+    link?: string
     githubLink?: string
     description: ReactNode
+    badge?: string
 }) => {
     return (
         <Button
-            asChild
-            className="flex h-full w-full flex-col items-start justify-start gap-2"
+            className="flex h-full w-full flex-col items-start justify-start gap-2 text-start"
             variant="ghost"
         >
-            <Link href={link}>
-                <div className="flex gap-1">
+            <Link className="space-y-1" href={link ?? ""}>
+                <div className="flex flex-row gap-1">
                     <h2 className="font-mono underline underline-offset-4">
                         {title}
                     </h2>
-                    {githubLink ? (
-                        <object className="mb-[-0.03125rem] h-[1.25em] w-[1.25em] self-end rounded-full bg-foreground text-background transition-colors hover:bg-accent hover:text-foreground">
-                            <Link href={githubLink}>
-                                <Github
-                                    absoluteStrokeWidth={true}
-                                    className="h-[1.25em] w-[1.25em] p-0.5 pb-[0.0625rem]"
-                                    strokeWidth={2.25}
-                                />
-                            </Link>
-                        </object>
+                    {badge ? (
+                        <Badge
+                            className={cn("w-fit rounded-full")}
+                            variant={
+                                badge === "Borked"
+                                    ? "destructive"
+                                    : badge === "Archived"
+                                      ? "secondary"
+                                      : "default"
+                            }
+                        >
+                            {badge}
+                        </Badge>
                     ) : null}
                 </div>
                 <p className="text-primary/80">{description}</p>
             </Link>
+            {githubLink ? (
+                <Button asChild className="h-auto w-auto p-0" variant="link">
+                    <Link href={githubLink}>
+                        Github <ArrowUpRight className="-ml-0.5" size={20} />
+                    </Link>
+                </Button>
+            ) : null}
         </Button>
     )
 }
 
 const Home = () => {
     return (
-        <main className="flex flex-col gap-4 tracking-wide">
+        <main className="flex flex-col gap-4 pt-2 tracking-wide">
             <div className="space-y-2">
-                {/* <div className="w-36 md:w-44">
+                {/* <div className="w-36 sm:w-44">
                     <Image
                         alt="Profile Picture"
                         className="!relative rounded-full"
@@ -67,10 +76,11 @@ const Home = () => {
                         src={ProfilePic}
                     />
                 </div> */}
-                <h1 className="font-mono text-xl font-semibold md:text-2xl">
+                <h1 className="font-mono text-xl font-semibold sm:text-2xl">
                     Hey there, I&apos;m Shreyans!
                 </h1>
-                <p className="text-base tracking-wider text-primary/80 [text-wrap:pretty] md:text-lg">
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+                <p className="text-pretty text-base tracking-wider text-primary/80 sm:text-lg">
                     A software developer from India 🇮🇳. Also a student and
                     entrepreneur. About <BirthTime /> old. Into everything from
                     tech and business to finance, law, science, food, and
@@ -79,18 +89,44 @@ const Home = () => {
             </div>
             <Separator />
             <div className="space-y-2">
-                <h2 className="text-lg font-medium md:text-xl">My Work</h2>
-                <div className="grid grid-flow-row grid-cols-2 gap-[4%]">
+                <h2 className="text-lg font-medium sm:text-xl">My Work</h2>
+                <div className="grid grid-flow-row grid-cols-1 gap-x-[4%] sm:grid-cols-2">
                     <Project
-                        description="My personal corner of the web."
+                        badge="Private"
+                        description="Complete event manager for students"
+                        title="Event Thingy"
+                    />
+                    <Project
+                        badge="Private"
+                        description="Search your emails with AI"
+                        link="https://findy-thingy.shreyans.sh"
+                        title="Findy Thingy"
+                    />
+                    <Project
+                        description="My personal corner of the web"
                         githubLink="https://github.com/destroyerxyz/shreyans.sh"
                         link="https://shreyans.sh"
                         title="shreyans.sh"
                     />
                     <Project
-                        description="Search your emails with AI."
-                        link="https://findy-thingy.shreyans.sh"
-                        title="Findy Thingy"
+                        description="Simple Upstash Redis client"
+                        githubLink="https://github.com/destroyerxyz/upstash-kv"
+                        link="https://github.com/destroyerxyz/upstash-kv"
+                        title="upstash-kv"
+                    />
+                    <Project
+                        badge="Borked"
+                        description="A newsletter curated by AI"
+                        githubLink="https://github.com/destroyerxyz/theaichronicles"
+                        link="https://ai.shreyans.sh"
+                        title="The AI Chronicles"
+                    />
+                    <Project
+                        badge="Archived"
+                        description="A POC blockchain voting app"
+                        githubLink="https://github.com/DestroyerXyz/blockvote-solidity"
+                        link="https://blockvote.vercel.app/"
+                        title="Blockvote"
                     />
                 </div>
             </div>
