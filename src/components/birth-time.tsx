@@ -1,5 +1,3 @@
-"use client"
-
 const getTimeElapsed = (startDate: number) => {
     const timeDifference = Date.now() - startDate
 

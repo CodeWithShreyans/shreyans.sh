@@ -2,6 +2,8 @@
 
 import { useEffect } from "react"
 
+import { captureException } from "@sentry/nextjs"
+
 import { Button } from "@/components/shadcn/button"
 
 export default function Error({
@@ -12,7 +14,7 @@ export default function Error({
     reset: () => void
 }) {
     useEffect(() => {
-        console.error(error)
+        captureException(error)
     }, [error])
 
     return (

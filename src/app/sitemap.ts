@@ -2,21 +2,21 @@ import { type MetadataRoute } from "next"
 
 import { allPosts } from "contentlayer/generated"
 
-const siteMap = (): MetadataRoute.Sitemap => {
-    const SITE_URL = "https://shreyans.sh"
+import { siteConfig } from "@/config/site"
 
+const siteMap = (): MetadataRoute.Sitemap => {
     const map: MetadataRoute.Sitemap = [
         {
             changeFrequency: "hourly",
             lastModified: new Date(),
             priority: 1,
-            url: SITE_URL,
+            url: siteConfig.url,
         },
         {
             changeFrequency: "daily",
             lastModified: new Date(),
             priority: 0.7,
-            url: `${SITE_URL}/blog`,
+            url: `${siteConfig.url}/blog`,
         },
     ]
 
@@ -26,7 +26,7 @@ const siteMap = (): MetadataRoute.Sitemap => {
             changeFrequency: "weekly",
             lastModified: post.date,
             priority: 0.9,
-            url: `${SITE_URL}/blog/${post._raw.flattenedPath}`,
+            url: `${siteConfig.url}/blog/${post._raw.flattenedPath}`,
         })
     }
 

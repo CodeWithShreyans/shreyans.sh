@@ -4,7 +4,7 @@ import { useEffect } from "react"
 
 import Error from "next/error"
 
-import * as Sentry from "@sentry/nextjs"
+import { captureException } from "@sentry/nextjs"
 
 import { Button } from "@/components/shadcn/button"
 
@@ -16,7 +16,7 @@ export default function GlobalError({
     reset: () => void
 }) {
     useEffect(() => {
-        Sentry.captureException(error)
+        captureException(error)
     }, [error])
 
     return (
