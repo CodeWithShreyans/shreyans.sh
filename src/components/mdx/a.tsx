@@ -3,12 +3,12 @@ import { ArrowUpRight } from "lucide-react"
 import { LinkButton } from "@/lib/utils/next"
 
 type AProps = {
-    href?: string
     children?: React.ReactNode
+    href?: string
     rest: React.HTMLProps<HTMLAnchorElement>
 }
 
-const A = ({ href, children, ...rest }: AProps) => {
+const A = ({ children, href, ...rest }: AProps) => {
     const self = href
         ? href.startsWith("https://shreyans.sh") ||
           href.includes("localhost") ||

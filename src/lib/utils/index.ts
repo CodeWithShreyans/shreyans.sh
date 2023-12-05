@@ -31,4 +31,4 @@ const range = (start: number, end: number, step = 1) => {
     return output
 }
 
-export { cn, random, debounce, range }
+export { cn, debounce, random, range }

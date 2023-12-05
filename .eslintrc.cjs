@@ -1,11 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-        project: true,
-        ecmaFeatures: { jsx: true },
-    },
-    plugins: ["@typescript-eslint", "react"],
     extends: [
         "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended-type-checked",
@@ -13,10 +7,16 @@ const config = {
         "plugin:tailwindcss/recommended",
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
+        "plugin:perfectionist/recommended-natural",
     ],
+    ignorePatterns: ["src/components/shadcn/*"],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaFeatures: { jsx: true },
+        project: true,
+    },
+    plugins: ["@typescript-eslint", "react", "perfectionist"],
     rules: {
-        "@typescript-eslint/consistent-type-definitions": "off",
-
         "@typescript-eslint/array-type": [
             "warn",
             {
@@ -24,16 +24,13 @@ const config = {
             },
         ],
         "@typescript-eslint/ban-ts-comment": ["warn"],
+        "@typescript-eslint/consistent-type-definitions": "off",
         "@typescript-eslint/consistent-type-imports": [
             "warn",
             {
-                prefer: "type-imports",
                 fixStyle: "inline-type-imports",
+                prefer: "type-imports",
             },
-        ],
-        "@typescript-eslint/no-unused-vars": [
-            "warn",
-            { argsIgnorePattern: "^_" },
         ],
         "@typescript-eslint/no-misused-promises": [
             2,
@@ -41,16 +38,21 @@ const config = {
                 checksVoidReturn: { attributes: false },
             },
         ],
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            { argsIgnorePattern: "^_" },
+        ],
 
+        "perfectionist/sort-imports": "off",
+        "perfectionist/sort-jsx-props": "off",
         "react/jsx-sort-props": [
             "warn",
             {
                 callbacksLast: true,
-                shorthandFirst: true,
                 reservedFirst: true,
+                shorthandFirst: true,
             },
         ],
-
         "react/prop-types": ["error", { ignore: ["className", "sideOffset"] }],
     },
     settings: {

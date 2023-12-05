@@ -3,12 +3,12 @@ import { Hash } from "lucide-react"
 import { LinkButton } from "@/lib/utils/next"
 
 const H1 = ({
-    id,
     children,
+    id,
     ...rest
 }: {
-    id?: string
     children?: React.ReactNode
+    id?: string
     rest: React.HTMLProps<HTMLHeadingElement>
 }) => {
     return (

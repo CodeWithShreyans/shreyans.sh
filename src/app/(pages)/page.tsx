@@ -13,24 +13,24 @@ import { cn } from "@/lib/utils"
 export const revalidate = 3600 // 1 hour
 
 const Project = ({
-    title,
-    link,
-    githubLink,
-    description,
     badge,
+    description,
+    githubLink,
+    link,
+    title,
 }: {
-    title: string
-    link?: string
-    githubLink?: string
-    description: ReactNode
     badge?: string
+    description: ReactNode
+    githubLink?: string
+    link?: string
+    title: string
 }) => {
     return (
         <Button
             className="flex h-full w-full flex-col items-start justify-start gap-2 text-start"
             variant="ghost"
         >
-            <Link className="space-y-1" href={link ?? ""} target="_blank">
+            <Link className="space-y-1" href={link ?? "#"} target="_blank">
                 <div className="flex flex-row gap-1">
                     <h2 className="font-mono underline underline-offset-4">
                         {title}

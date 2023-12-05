@@ -13,19 +13,19 @@ import Pre from "./pre"
 import Ul from "./ul"
 
 const components = {
+    a: A,
+    blockquote: Blockquote,
+    code: Code,
     h1: H1,
     h2: H2,
     h3: H3,
     h4: H4,
-    a: A,
-    blockquote: Blockquote,
-    img: Img,
-    code: Code,
     hr: Hr,
+    img: Img,
     ol: Ol,
-    ul: Ul,
-    pre: Pre,
     p: P,
+    pre: Pre,
+    ul: Ul,
 }
 
 export type Components = typeof components

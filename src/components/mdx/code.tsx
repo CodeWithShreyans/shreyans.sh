@@ -4,11 +4,11 @@ import { getHighlighter } from "shiki"
 import "./code.css"
 
 const Code = async ({
-    className,
     children,
+    className,
 }: {
-    className?: string
     children?: string
+    className?: string
 }) => {
     const highlighter = await getHighlighter({})
     //TODO: Rewrite with highlighter.codeToThemedTokens

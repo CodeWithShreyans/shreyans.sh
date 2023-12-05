@@ -24,8 +24,8 @@ const Page = () => {
                                     {new Date(post.date).toLocaleDateString(
                                         "en-US",
                                         {
-                                            month: "short",
                                             day: "numeric",
+                                            month: "short",
                                             year: "numeric",
                                         },
                                     )}

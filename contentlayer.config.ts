@@ -3,43 +3,39 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
 const Post = defineDocumentType(() => ({
-    name: "Post",
-    filePathPattern: `**/*.mdx`,
-    contentType: "mdx",
-    fields: {
-        title: {
-            type: "string",
-            description: "The title of the post",
-            required: true,
-        },
-        brief: {
-            type: "string",
-            description: "A short brief of the post",
-            required: true,
-        },
-        date: {
-            type: "date",
-            description: "The date of the post",
-            required: true,
-        },
-    },
     computedFields: {
         url: {
-            type: "string",
             resolve: (doc) => `/blog/${doc._raw.flattenedPath}`,
+            type: "string",
         },
     },
+    contentType: "mdx",
+    fields: {
+        brief: {
+            description: "A short brief of the post",
+            required: true,
+            type: "string",
+        },
+        date: {
+            description: "The date of the post",
+            required: true,
+            type: "date",
+        },
+        title: {
+            description: "The title of the post",
+            required: true,
+            type: "string",
+        },
+    },
+    filePathPattern: `**/*.mdx`,
+    name: "Post",
 }))
 
 export default makeSource({
     contentDirPath: "posts",
     documentTypes: [Post],
     mdx: {
-        rehypePlugins: [
-            // @ts-ignore
-            // rehypePrism,
-            rehypeSlug,
-        ],
+        rehypePlugins: [rehypeSlug],
         remarkPlugins: [remarkGfm],
     },
 })

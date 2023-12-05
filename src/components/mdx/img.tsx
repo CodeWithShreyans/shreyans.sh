@@ -3,12 +3,12 @@ import Image from "next/image"
 import "./img.css"
 
 type ImgProps = {
-    src?: string
     alt?: string
     rest: React.HTMLProps<HTMLImageElement>
+    src?: string
 }
 
-const Img = ({ src, alt, ...rest }: ImgProps) => {
+const Img = ({ alt, src, ...rest }: ImgProps) => {
     return (
         <Image
             {...rest}

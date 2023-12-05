@@ -9,6 +9,9 @@ import { cn } from "@/lib/utils"
 const alertVariants = cva(
     "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
     {
+        defaultVariants: {
+            variant: "default",
+        },
         variants: {
             variant: {
                 default: "bg-background text-foreground",
@@ -17,9 +20,6 @@ const alertVariants = cva(
                 warning:
                     " border-yellow-600 text-yellow-600 dark:border-yellow-500 dark:text-yellow-500 [&>svg]:text-yellow-600 dark:[&>svg]:text-yellow-500",
             },
-        },
-        defaultVariants: {
-            variant: "default",
         },
     },
 )
@@ -64,4 +64,4 @@ const AlertDescription = React.forwardRef<
 ))
 AlertDescription.displayName = "AlertDescription"
 
-export { Alert, AlertTitle, AlertDescription }
+export { Alert, AlertDescription, AlertTitle }

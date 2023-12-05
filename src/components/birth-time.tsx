@@ -16,7 +16,7 @@ const getTimeElapsed = (startDate: number) => {
     const days = Math.floor((timeDifference / millisecondsInDay) % 30.44) // Approximate days in a month
     const hours = Math.floor((timeDifference / millisecondsInHour) % 24)
 
-    return { years, months, days, hours }
+    return { days, hours, months, years }
 }
 
 const BirthTime = () => {

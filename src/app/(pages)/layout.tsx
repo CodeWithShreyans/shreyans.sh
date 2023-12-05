@@ -19,56 +19,59 @@ import { cn } from "@/lib/utils"
 
 // import { TRPCReactProvider } from "@/trpc/react"
 
-// TODO: Metadata
 export const metadata: Metadata = {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    keywords: [
-        // "Blog",
-        // "Template",
-        // "Next.js",
-        // "React",
-        // "Tailwind CSS",
-        // "Server Components",
-        // "Shadcn UI",
-    ],
     authors: [
         {
-            name: "Shreyans Jain",
-            url: "https://shreyans.sh",
+            name: siteConfig.name,
+            url: siteConfig.url,
         },
     ],
-    creator: "Shreyans Jain",
+    creator: siteConfig.name,
+    description: siteConfig.description,
+    formatDetection: { email: true, telephone: true },
+    keywords: [
+        "Shreyans Jain",
+        "DestroyerXyz",
+        "Developer",
+        "Blog",
+        "Portfolio",
+    ],
+    metadataBase: new URL(siteConfig.url),
     openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: siteConfig.url,
-        title: siteConfig.name,
         description: siteConfig.description,
+        locale: "en_US",
         siteName: siteConfig.name,
-        // images: [
-        //     {
-        //         url: siteConfig.ogImage,
-        //         width: 1200,
-        //         height: 630,
-        //         alt: siteConfig.name,
-        //     },
-        // ],
+        title: siteConfig.name,
+        type: "website",
+        url: siteConfig.url,
     },
+    robots: {
+        follow: true,
+        googleBot: {
+            follow: true,
+            index: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
+        index: true,
+    },
+    title: siteConfig.name,
     twitter: {
         card: "summary_large_image",
-        title: siteConfig.name,
-        description: siteConfig.description,
-        // images: [siteConfig.ogImage],
         creator: "@Destroyer_Xyz",
+        description: siteConfig.description,
+        site: "@Destroyer_Xyz",
+        title: siteConfig.name,
     },
-    // manifest: `${siteConfig.url}/site.webmanifest`,
+    // TODO: Languages
+    // alternates: {languages: {}}
 }
 
 export const viewport: Viewport = {
     themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "white" },
-        { media: "(prefers-color-scheme: dark)", color: "black" },
+        { color: "white", media: "(prefers-color-scheme: light)" },
+        { color: "black", media: "(prefers-color-scheme: dark)" },
     ],
 }
 
@@ -93,9 +96,9 @@ export default function RootLayout({
             >
                 {/* <TRPCReactProvider headers={headers()}> */}
                 <ThemeProvider
-                    enableSystem
                     attribute="class"
                     defaultTheme="system"
+                    enableSystem={true}
                 >
                     <div className="flex w-full flex-col gap-2" id="top">
                         <Header />

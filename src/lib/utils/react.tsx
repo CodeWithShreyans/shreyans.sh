@@ -60,38 +60,39 @@ const usePrefersReducedMotion = () => {
 }
 
 type BoopConfig = {
-    x?: number
-    y?: number
     rotation?: number
     scale?: number
-    timing?: number
     springConfig?: {
-        tension?: number
         friction?: number
+        tension?: number
     }
+    timing?: number
+    x?: number
+    y?: number
 }
 const useBoop = ({
-    x = 0,
-    y = 0,
     rotation = 0,
     scale = 1,
-    timing = 150,
     springConfig = {
-        tension: 300,
         friction: 10,
+        tension: 300,
     },
+    timing = 150,
+    x = 0,
+    y = 0,
 }: BoopConfig): [
     (
-        | Record<string, never>
         | {
               transform: SpringValue<string>
           }
+        | Record<string, never>
     ),
     React.MouseEventHandler<HTMLSpanElement>,
 ] => {
     const prefersReducedMotion = usePrefersReducedMotion()
     const [isBooped, setIsBooped] = React.useState(false)
     const style = useSpring({
+        config: springConfig,
         transform: isBooped
             ? `translate(${x}px, ${y}px)
          rotate(${rotation}deg)
@@ -99,7 +100,6 @@ const useBoop = ({
             : `translate(0px, 0px)
          rotate(0deg)
          scale(1)`,
-        config: springConfig,
     })
     React.useEffect(() => {
         if (!isBooped) {
@@ -122,11 +122,11 @@ const useBoop = ({
 }
 
 const Boop = ({
-    children,
     boopConfig,
+    children,
 }: {
-    children: ReactNode
     boopConfig: BoopConfig
+    children: ReactNode
 }) => {
     const [style, trigger] = useBoop(boopConfig)
     return (
@@ -248,15 +248,15 @@ const VisuallyHidden = ({
     delegated: React.ButtonHTMLAttributes<HTMLAllCollection>
 }) => {
     const hiddenStyles: React.CSSProperties = {
-        display: "inline-block",
-        position: "absolute",
-        overflow: "hidden",
-        clip: "rect(0 0 0 0)",
-        height: 1,
-        width: 1,
-        margin: -1,
-        padding: 0,
         border: 0,
+        clip: "rect(0 0 0 0)",
+        display: "inline-block",
+        height: 1,
+        margin: -1,
+        overflow: "hidden",
+        padding: 0,
+        position: "absolute",
+        width: 1,
     }
     const [forceShow, setForceShow] = React.useState(false)
     React.useEffect(() => {
@@ -290,16 +290,16 @@ const VisuallyHidden = ({
 }
 
 export {
-    useHasMounted,
-    useToggle,
-    usePrefersReducedMotion,
-    useBoop,
     Boop,
-    useStickyState,
+    VisuallyHidden,
+    useBoop,
+    useHasMounted,
     useInterval,
-    useTimeout,
+    useMousePosition,
+    usePrefersReducedMotion,
     useRandomInterval,
     useRetryUntilResolved,
-    useMousePosition,
-    VisuallyHidden,
+    useStickyState,
+    useTimeout,
+    useToggle,
 }
