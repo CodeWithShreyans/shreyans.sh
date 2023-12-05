@@ -21,6 +21,7 @@ const config = {
         useDeploymentIdServerActions: true,
     },
     reactStrictMode: true,
+    transpilePackages: ["react-markdown", "remark-gfm"],
 }
 
 export default withSentryConfig(
