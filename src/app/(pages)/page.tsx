@@ -132,6 +132,12 @@ const Home = () => {
                         link="https://blockvote.vercel.app/"
                         title="Blockvote"
                     />
+                    <Project
+                        description="A platform for freelancers and companies to work together"
+                        githubLink="https://github.com/duelance-app"
+                        link="https://duelance.app"
+                        title="Duelance"
+                    />
                 </div>
             </div>
         </main>
