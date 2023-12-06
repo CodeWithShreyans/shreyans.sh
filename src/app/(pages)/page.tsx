@@ -30,7 +30,11 @@ const Project = ({
             className="flex h-full w-full flex-col items-start justify-start gap-2 text-start"
             variant="ghost"
         >
-            <Link className="space-y-1" href={link ?? "#"} target="_blank">
+            <Link
+                className="space-y-1"
+                href={link ?? "#"}
+                target={link ? "_blank" : "_self"}
+            >
                 <div className="flex flex-row gap-1">
                     <h2 className="font-mono underline underline-offset-4">
                         {title}
