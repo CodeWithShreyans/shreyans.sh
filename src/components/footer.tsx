@@ -11,7 +11,7 @@ import { Separator } from "@/components/shadcn/separator"
 
 const Footer = () => {
     return (
-        <footer className="w-full" id="bottom">
+        <footer className="w-full animate-up" id="bottom">
             <Separator />
             <div
                 className="flex h-[5vh] items-center justify-between p-1"

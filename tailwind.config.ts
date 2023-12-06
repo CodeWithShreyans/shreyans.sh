@@ -21,7 +21,10 @@ module.exports = {
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                down: "down 1.5s ease-in-out 0s 1 normal none running",
+                "fade-in": "fade-in 1.5s ease-in-out 0s 1 normal none running",
                 "rotate-clock-180": "rotate-180 0.2s ease-out",
+                up: "up 1.5s ease-in-out 0s 1 normal none running",
             },
             borderRadius: {
                 lg: "var(--radius)",
@@ -76,9 +79,21 @@ module.exports = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: "0" },
                 },
+                down: {
+                    from: { opacity: "0", transform: "translateY(-0.5rem)" },
+                    to: { opacity: "1", transform: "translateY(0)" },
+                },
+                "fade-in": {
+                    from: { opacity: "0" },
+                    to: { opacity: "1" },
+                },
                 "rotate-clock-180": {
                     from: { transform: "rotate(0deg)" },
                     to: { transform: "rotate(180deg)" },
+                },
+                up: {
+                    from: { opacity: "0", transform: "translateY(0.5rem)" },
+                    to: { opacity: "1", transform: "translateY(0)" },
                 },
             },
         },
