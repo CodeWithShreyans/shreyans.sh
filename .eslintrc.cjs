@@ -57,7 +57,7 @@ const config = {
     },
     settings: {
         tailwindcss: {
-            callees: ["twmerge", "cva", "cn"],
+            callees: ["twmerge", "cva", "cn", "tw"],
         },
     },
 }
