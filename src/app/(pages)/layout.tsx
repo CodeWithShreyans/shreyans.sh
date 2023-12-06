@@ -14,8 +14,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
-export const runtime = "edge"
-
 export const metadata: Metadata = {
     authors: [
         {
