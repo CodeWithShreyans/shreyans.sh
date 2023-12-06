@@ -2,7 +2,6 @@ import "./globals.css"
 
 import { type Metadata, type Viewport } from "next"
 
-import { Slot } from "@radix-ui/react-slot"
 import { Analytics } from "@vercel/analytics/react"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
@@ -11,13 +10,11 @@ import { AlertCircle } from "lucide-react"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Alert, AlertDescription, AlertTitle } from "@/components/shadcn/alert"
-// import { headers } from "next/headers"
-
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
-// import { TRPCReactProvider } from "@/trpc/react"
+export const runtime = "edge"
 
 export const metadata: Metadata = {
     authors: [
