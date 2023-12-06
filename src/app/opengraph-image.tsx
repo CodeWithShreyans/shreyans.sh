@@ -28,22 +28,12 @@ export default function OG() {
         (
             <div
                 style={{
-                    backgroundColor: "hsl(240 10% 3.9%)",
-                    color: "hsl(0 0% 98%)",
-                    gap: "1rem",
+                    backgroundColor: "#8BC6EC",
+                    backgroundImage:
+                        "linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)",
                 }}
-                tw="flex items-center justify-center w-full h-full"
-            >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    alt="Shreyans Jain"
-                    height={500}
-                    src={`${siteConfig.url}/profile-pic.jpg`}
-                    tw="rounded-full"
-                    width={500}
-                />
-                <p tw="text-8xl text-center text-foreground">Shreyans Jain</p>
-            </div>
+                tw="w-full h-full"
+            ></div>
         ),
         {
             ...size,
