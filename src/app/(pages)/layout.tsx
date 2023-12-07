@@ -24,13 +24,7 @@ export const metadata: Metadata = {
     creator: siteConfig.name,
     description: siteConfig.description,
     formatDetection: { email: true, telephone: true },
-    keywords: [
-        "Shreyans Jain",
-        "DestroyerXyz",
-        "Developer",
-        "Blog",
-        "Portfolio",
-    ],
+    keywords: siteConfig.baseKeywords,
     metadataBase: new URL(siteConfig.url),
     openGraph: {
         description: siteConfig.description,
@@ -84,9 +78,7 @@ export default function RootLayout({
             lang="en"
         >
             <body
-                className={cn(
-                    "mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base sm:max-w-[46rem]",
-                )}
+                className="mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base antialiased sm:max-w-[46rem]"
                 id="body"
             >
                 {/* <TRPCReactProvider headers={headers()}> */}

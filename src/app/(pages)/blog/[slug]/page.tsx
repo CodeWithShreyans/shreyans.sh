@@ -1,21 +1,29 @@
+import { type Metadata } from "next"
+
 import { allPosts } from "contentlayer/generated"
 // import { format, parseISO } from "date-fns"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
 import components from "@/components/mdx"
 import { Separator } from "@/components/shadcn/separator"
+import { siteConfig } from "@/config/site"
 
 export const generateStaticParams = () =>
     allPosts.map((post) => ({
         slug: post._raw.flattenedPath,
     }))
 
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-    console.log(allPosts)
+export const generateMetadata = ({
+    params,
+}: {
+    params: { slug: string }
+}): Metadata => {
+    const post = allPosts.find(
+        (post) => post._raw.flattenedPath === params.slug,
+    )
     return {
-        title: `${allPosts.find(
-            (post) => post._raw.flattenedPath === params.slug,
-        )?.title} | Shreyans' Blog`,
+        keywords: siteConfig.baseKeywords.concat(post?.tags ?? []),
+        title: `${post?.title} - Blog`,
     }
 }
 
