@@ -2,14 +2,14 @@ import type { ClassNameValue } from "tailwind-merge"
 
 import { twMerge } from "tailwind-merge"
 
-const cn = (...inputs: ClassNameValue[]) => {
+export const cn = (...inputs: ClassNameValue[]) => {
     return twMerge(inputs)
 }
 
-const random = (min: number, max: number) =>
+export const random = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min)) + min
 
-const debounce = <S>(callback: (...args: S[]) => void, wait: number) => {
+export const debounce = <S>(callback: (...args: S[]) => void, wait: number) => {
     let timeoutId: number | undefined = undefined
     return (...args: S[]) => {
         window.clearTimeout(timeoutId)
@@ -19,7 +19,7 @@ const debounce = <S>(callback: (...args: S[]) => void, wait: number) => {
     }
 }
 
-const range = (start: number, end: number, step = 1) => {
+export const range = (start: number, end: number, step = 1) => {
     const output = []
     if (typeof end === "undefined") {
         end = start
@@ -31,4 +31,23 @@ const range = (start: number, end: number, step = 1) => {
     return output
 }
 
-export { cn, debounce, random, range }
+export const getTimeElapsed = (startDateMs: number) => {
+    const timeDifference = Date.now() - startDateMs
+
+    // Define milliseconds in a unit of time
+    const millisecondsInSecond = 1000
+    const millisecondsInMinute = millisecondsInSecond * 60
+    const millisecondsInHour = millisecondsInMinute * 60
+    const millisecondsInDay = millisecondsInHour * 24
+    const millisecondsInMonth = millisecondsInDay * (365.25 / 12) // Approximate days in a month
+
+    // Calculate years, months, days, hours, minutes, and seconds
+    const years = Math.floor(timeDifference / millisecondsInMonth / 12)
+    const months = Math.floor((timeDifference / millisecondsInMonth) % 12)
+    const days = Math.floor((timeDifference / millisecondsInDay) % 30.44) // Approximate days in a month
+    const hours = Math.floor((timeDifference / millisecondsInHour) % 24)
+    const minutes = Math.floor((timeDifference / millisecondsInMinute) % 60)
+    const seconds = Math.floor((timeDifference / millisecondsInSecond) % 60)
+
+    return { days, hours, minutes, months, seconds, years }
+}

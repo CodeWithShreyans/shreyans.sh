@@ -1,21 +1,4 @@
-const getTimeElapsed = (startDate: number) => {
-    const timeDifference = Date.now() - startDate
-
-    // Define milliseconds in a unit of time
-    const millisecondsInSecond = 1000
-    const millisecondsInMinute = millisecondsInSecond * 60
-    const millisecondsInHour = millisecondsInMinute * 60
-    const millisecondsInDay = millisecondsInHour * 24
-    const millisecondsInMonth = millisecondsInDay * (365.25 / 12) // Approximate days in a month
-
-    // Calculate years, months, days, hours, minutes, and seconds
-    const years = Math.floor(timeDifference / millisecondsInMonth / 12)
-    const months = Math.floor((timeDifference / millisecondsInMonth) % 12)
-    const days = Math.floor((timeDifference / millisecondsInDay) % 30.44) // Approximate days in a month
-    const hours = Math.floor((timeDifference / millisecondsInHour) % 24)
-
-    return { days, hours, months, years }
-}
+import { getTimeElapsed } from "@/lib/utils"
 
 const BirthTime = () => {
     const time = getTimeElapsed(1179628980000)
