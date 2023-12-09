@@ -78,7 +78,7 @@ export default function RootLayout({
             lang="en"
         >
             <body
-                className="mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base antialiased sm:max-w-[46rem]"
+                className="mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base sm:max-w-[46rem]"
                 id="body"
             >
                 {/* <TRPCReactProvider headers={headers()}> */}

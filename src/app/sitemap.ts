@@ -21,7 +21,6 @@ const siteMap = (): MetadataRoute.Sitemap => {
     ]
 
     for (const post of allPosts) {
-        console.log(post._raw.flattenedPath)
         map.push({
             changeFrequency: "weekly",
             lastModified: post.date,

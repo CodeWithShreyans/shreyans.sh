@@ -15,7 +15,6 @@ const A = ({ children, href, ...rest }: AProps) => {
           href.startsWith("#")
         : false
 
-    console.log(href)
     return (
         <LinkButton
             {...rest}
