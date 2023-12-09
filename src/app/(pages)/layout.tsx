@@ -81,7 +81,6 @@ export default function RootLayout({
                 className="mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base sm:max-w-[46rem]"
                 id="body"
             >
-                {/* <TRPCReactProvider headers={headers()}> */}
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
@@ -100,7 +99,6 @@ export default function RootLayout({
                     </div>
                     <Footer />
                 </ThemeProvider>
-                {/* </TRPCReactProvider> */}
                 <Analytics />
             </body>
         </html>

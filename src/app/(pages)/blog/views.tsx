@@ -1,5 +1,6 @@
 import { unstable_noStore } from "next/cache"
 
+import { env } from "@/env.mjs"
 import { cn } from "@/lib/utils"
 
 type SentryResponse = {
@@ -26,7 +27,7 @@ const getViews = async (slug: string) => {
     api.searchParams.set("query", `(transaction:/blog/${slug})`)
     const views = await fetch(api, {
         headers: {
-            Authorization: `Bearer ${process.env.SENTRY_TOKEN}`,
+            Authorization: `Bearer ${env.SENTRY_TOKEN}`,
         },
     })
 

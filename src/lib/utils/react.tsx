@@ -8,6 +8,8 @@ import React from "react"
 
 import { animated, useSpring } from "react-spring"
 
+import { env } from "@/env.mjs"
+
 import { random } from "."
 
 const useHasMounted = () => {
@@ -260,7 +262,7 @@ const VisuallyHidden = ({
     }
     const [forceShow, setForceShow] = React.useState(false)
     React.useEffect(() => {
-        if (process.env.NODE_ENV !== "production") {
+        if (env.NODE_ENV !== "production") {
             const handleKeyDown = (ev: KeyboardEvent) => {
                 if (ev.key === "Alt") {
                     setForceShow(true)

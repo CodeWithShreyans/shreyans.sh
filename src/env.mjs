@@ -7,7 +7,9 @@ export const env = createEnv({
      * isn't built with invalid env vars. To expose them to the client, prefix them with
      * `NEXT_PUBLIC_`.
      */
-    client: {},
+    client: {
+        NEXT_PUBLIC_SENTRY_DSN: z.string(),
+    },
 
     /**
      * Makes it so that empty strings are treated as undefined.
@@ -20,24 +22,22 @@ export const env = createEnv({
      * middlewares) or client-side so we need to destruct manually.
      */
     runtimeEnv: {
-        // DATABASE_URL: process.env.DATABASE_URL,
+        NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
+
         NODE_ENV: process.env.NODE_ENV,
+
+        SENTRY_TOKEN: process.env.SENTRY_TOKEN,
     },
     /**
      * Specify your server-side environment variables schema here. This way you can ensure the app
      * isn't built with invalid env vars.
      */
     server: {
-        // DATABASE_URL: z
-        //     .string()
-        //     .url()
-        //     .refine(
-        //         (str) => !str.includes("YOUR_MYSQL_URL_HERE"),
-        //         "You forgot to change the default URL",
-        //     ),
         NODE_ENV: z
             .enum(["development", "test", "production"])
             .default("development"),
+
+        SENTRY_TOKEN: z.string(),
     },
     /**
      * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
