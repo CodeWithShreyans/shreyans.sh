@@ -1,8 +1,8 @@
 import "./globals.css"
 
 import { type Metadata, type Viewport } from "next"
+import Script from "next/script"
 
-import { Analytics } from "@vercel/analytics/react"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 import { AlertCircle } from "lucide-react"
@@ -99,7 +99,11 @@ export default function RootLayout({
                     </div>
                     <Footer />
                 </ThemeProvider>
-                <Analytics />
+                <Script
+                    async={true}
+                    data-website-id="dc0e2c24-6cb6-47d2-90ec-3143d825ecd7"
+                    src="https://umami.shreyans.sh/script.js"
+                />
             </body>
         </html>
     )
