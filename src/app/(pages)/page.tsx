@@ -1,15 +1,18 @@
 import { type ReactNode } from "react"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { ArrowUpRight } from "lucide-react"
 
+import ProfilePic from "@/../public/profile-pic.jpg"
 import BirthTime from "@/components/birth-time"
 import { Badge } from "@/components/shadcn/badge"
 import { Button } from "@/components/shadcn/button"
 import { Separator } from "@/components/shadcn/separator"
 import { cn } from "@/lib/utils"
 
+export const dynamic = "force-static"
 export const revalidate = 3600 // 1 hour
 
 const Project = ({
@@ -71,15 +74,16 @@ const Home = () => {
     return (
         <main className="flex flex-col gap-4 pt-2 tracking-wide">
             <div className="space-y-2">
-                {/* <div className="w-36 sm:w-44">
+                <div className="w-36 sm:w-44">
                     <Image
                         alt="Profile Picture"
                         className="!relative rounded-full"
                         fill={true}
+                        loading="lazy"
                         placeholder="blur"
                         src={ProfilePic}
                     />
-                </div> */}
+                </div>
                 <h1 className="font-mono text-xl font-semibold sm:text-2xl">
                     Hey there, I&apos;m Shreyans!
                 </h1>

@@ -1,19 +1,20 @@
-import parse from "html-react-parser"
-import { getHighlighter } from "shiki"
+import { Code as Bright } from "bright"
 
-import "./code.css"
-
-const Code = async ({
+const Code = ({
     children,
     className,
 }: {
     children?: string
     className?: string
 }) => {
-    const highlighter = await getHighlighter({})
-    //TODO: Rewrite with highlighter.codeToThemedTokens
-    return parse(
-        highlighter.codeToHtml(children!, className?.replace("language-", "")),
+    return (
+        <Bright
+            lang={className?.replace("language-", "")}
+            lineNumbers={true}
+            theme="dracula"
+        >
+            {children}
+        </Bright>
     )
 }
 

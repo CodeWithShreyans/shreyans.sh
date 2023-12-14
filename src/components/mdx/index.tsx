@@ -9,13 +9,11 @@ import Hr from "./hr"
 import Img from "./img"
 import Ol from "./ol"
 import P from "./p"
-import Pre from "./pre"
 import Ul from "./ul"
 
 const components = {
     a: A,
     blockquote: Blockquote,
-    code: Code,
     h1: H1,
     h2: H2,
     h3: H3,
@@ -24,7 +22,7 @@ const components = {
     img: Img,
     ol: Ol,
     p: P,
-    pre: Pre,
+    pre: Code,
     ul: Ul,
 }
 

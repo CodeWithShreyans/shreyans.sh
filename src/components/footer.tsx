@@ -1,7 +1,5 @@
 import Link from "next/link"
 
-// import Logo from "@/../public/logo.png"
-
 import "./header.css"
 
 import { Github, Mail, Twitter } from "lucide-react"
@@ -20,17 +18,26 @@ const Footer = () => {
                 <p className="cursor-default">Shreyans Jain</p>
                 <div className="flex gap-1">
                     <Button asChild variant="ghost">
-                        <Link href="https://github.com/destroyerxyz">
+                        <Link
+                            aria-label="Github"
+                            href="https://github.com/destroyerxyz"
+                        >
                             <Github size={20} />
                         </Link>
                     </Button>
                     <Button asChild variant="ghost">
-                        <Link href="https://twitter.com/Destroyer_Xyz">
+                        <Link
+                            aria-label="Twitter"
+                            href="https://twitter.com/Destroyer_Xyz"
+                        >
                             <Twitter size={20} />
                         </Link>
                     </Button>
                     <Button asChild variant="ghost">
-                        <Link href="mailto:shreyans@shreyans.sh">
+                        <Link
+                            aria-label="Email"
+                            href="mailto:shreyans@shreyans.sh"
+                        >
                             <Mail size={20} />
                         </Link>
                     </Button>
