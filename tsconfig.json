@@ -18,7 +18,7 @@
         "noUncheckedIndexedAccess": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"],
+            "@/*": ["./app/*"],
             "contentlayer/generated": ["./.contentlayer/generated"]
         },
         "plugins": [{ "name": "next" }]

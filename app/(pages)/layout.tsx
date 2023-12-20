@@ -5,11 +5,9 @@ import Script from "next/script"
 
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
-import { AlertCircle } from "lucide-react"
 
 import Footer from "@/components/footer"
 import Header from "@/components/header"
-import { Alert, AlertDescription, AlertTitle } from "@/components/shadcn/alert"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"

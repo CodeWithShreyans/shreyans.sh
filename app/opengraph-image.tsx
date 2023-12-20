@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
 
-export const alt = "About Acme"
+export const alt = "A randomly generated fun gradient"
 export const size = {
     height: 630,
     width: 1200,

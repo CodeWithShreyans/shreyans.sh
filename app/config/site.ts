@@ -8,7 +8,7 @@ export const siteConfig = {
         "Blog",
         "Portfolio",
     ],
-    description: "Developer ~ Entrepreneur ~ Student" as const,
+    description: "Developer · Entrepreneur · Rationalist" as const,
     links: {
         github: "https://github.com/destroyerxyz/shreyans.sh",
         linkedin: "https://www.linkedin.com/in/sjain07/",

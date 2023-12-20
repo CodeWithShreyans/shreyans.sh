@@ -5,7 +5,7 @@ import { withContentlayer } from "next-contentlayer"
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-const { env } = await import("./src/env.mjs")
+const { env } = await import("./app/env.mjs")
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -17,6 +17,7 @@ const config = {
         ppr: true,
         useDeploymentId: true,
         useDeploymentIdServerActions: true,
+        webpackBuildWorker: true,
     },
     reactStrictMode: true,
     transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],

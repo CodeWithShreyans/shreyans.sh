@@ -9,7 +9,7 @@ const config = {
         "plugin:react/jsx-runtime",
         "plugin:perfectionist/recommended-natural",
     ],
-    ignorePatterns: ["src/components/shadcn/*"],
+    ignorePatterns: ["app/components/shadcn/*"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaFeatures: { jsx: true },
