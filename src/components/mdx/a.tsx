@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 import { LinkButton } from "@/lib/utils/next"
 
@@ -23,7 +23,7 @@ const A = ({ children, href, ...rest }: AProps) => {
             target={self ? "_self" : "_blank"}
         >
             {children}
-            {!self ? <ArrowUpRight className="-ml-0.5" size={20} /> : null}
+            {!self ? <ExternalLink className="-ml-0.5" size={20} /> : null}
         </LinkButton>
     )
 }

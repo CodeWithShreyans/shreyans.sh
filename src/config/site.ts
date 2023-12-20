@@ -1,3 +1,5 @@
+import { env } from "@/env.mjs"
+
 export const siteConfig = {
     baseKeywords: [
         "Shreyans Jain",
@@ -6,7 +8,6 @@ export const siteConfig = {
         "Blog",
         "Portfolio",
     ],
-    // ogImage: "https://ui.shadcn.com/og.jpg",
     description: "Developer ~ Entrepreneur ~ Student" as const,
     links: {
         github: "https://github.com/destroyerxyz/shreyans.sh",
@@ -14,7 +15,13 @@ export const siteConfig = {
         twitter: "https://twitter.com/Destroyer_Xyz",
     } as const,
     name: "Shreyans Jain" as const,
-    url: "https://shreyans.sh" as const,
+    ogImage: "/opengraph-image" as const,
+    url:
+        env.NODE_ENV === "production"
+            ? "https://shreyans.sh"
+            : env.VERCEL_URL
+              ? env.VERCEL_URL
+              : "http://localhost:3000",
 }
 
 export type SiteConfig = typeof siteConfig

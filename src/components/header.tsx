@@ -13,7 +13,7 @@ import "./header.css"
 const Header = () => {
     return (
         <header
-            className="mt-2 flex h-[5vh] w-full animate-down items-center justify-between p-1"
+            className="mt-2 flex h-[5dvh] w-full items-center justify-between p-1 non-touch:animate-down"
             id="header"
         >
             {/* eslint-disable-next-line tailwindcss/no-custom-classname */}

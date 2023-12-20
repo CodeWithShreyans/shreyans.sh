@@ -73,12 +73,12 @@ export default function RootLayout({
         <html
             className={cn(
                 `${GeistSans.variable} ${GeistMono.variable}`,
-                "scroll-smooth",
+                "*:col-[2] grid grid-cols-[1fr_min(60ch,_100%)_1fr] scroll-smooth",
             )}
             lang="en"
         >
             <body
-                className="mx-auto flex h-fit min-h-screen max-w-xl flex-col items-center justify-between gap-2 px-4 text-base sm:max-w-[46rem]"
+                className="flex h-fit min-h-screen flex-col items-center justify-between gap-2 px-4 text-base"
                 id="body"
             >
                 <ThemeProvider
@@ -88,13 +88,6 @@ export default function RootLayout({
                 >
                     <div className="flex w-full flex-col gap-2" id="top">
                         <Header />
-                        <Alert className="animate-fade-in" variant="warning">
-                            <AlertCircle className="h-5 w-5" />
-                            <AlertTitle>WIP</AlertTitle>
-                            <AlertDescription>
-                                This site is still very much a work in progress.
-                            </AlertDescription>
-                        </Alert>
                         {children}
                     </div>
                     <Footer />

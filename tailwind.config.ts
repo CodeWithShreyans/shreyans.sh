@@ -8,6 +8,9 @@ module.exports = {
         "./src/**/*.{ts,tsx}",
     ],
     darkMode: ["class"],
+    future: {
+        hoverOnlyWhenSupported: true,
+    },
     plugins: [require("tailwindcss-animate")],
     theme: {
         container: {
@@ -95,6 +98,9 @@ module.exports = {
                     from: { opacity: "0", transform: "translateY(0.5rem)" },
                     to: { opacity: "1", transform: "translateY(0)" },
                 },
+            },
+            screens: {
+                "non-touch": { raw: "(hover: hover)" },
             },
         },
     },

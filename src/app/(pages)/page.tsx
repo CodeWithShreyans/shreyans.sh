@@ -3,7 +3,7 @@ import { type ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { ArrowUpRight } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 import ProfilePic from "@/../public/profile-pic.jpg"
 import BirthTime from "@/components/birth-time"
@@ -39,8 +39,8 @@ const Project = ({
                 target={link ? "_blank" : "_self"}
             >
                 <div className="flex flex-row gap-1">
-                    <h2 className="font-mono underline underline-offset-4">
-                        {title}
+                    <h2 className="font-mono tracking-normal underline underline-offset-4">
+                        {title.replaceAll(" ", " ")}
                     </h2>
                     {badge ? (
                         <Badge
@@ -62,7 +62,7 @@ const Project = ({
             {githubLink ? (
                 <Button asChild className="h-auto w-auto p-0" variant="link">
                     <Link href={githubLink} target="_blank">
-                        Github <ArrowUpRight className="-ml-0.5" size={20} />
+                        Github <ExternalLink className="h-4" size={20} />
                     </Link>
                 </Button>
             ) : null}
@@ -72,7 +72,7 @@ const Project = ({
 
 const Home = () => {
     return (
-        <main className="flex flex-col gap-4 pt-2 tracking-wide">
+        <main className="flex flex-col gap-4 tracking-wide">
             <div className="space-y-2">
                 <div className="w-36 sm:w-44">
                     <Image
@@ -84,11 +84,11 @@ const Home = () => {
                         src={ProfilePic}
                     />
                 </div>
-                <h1 className="font-mono text-xl font-semibold sm:text-2xl">
+                <h1 className="font-mono text-lg font-semibold sm:text-xl md:text-2xl xl:text-3xl">
                     Hey there, I&apos;m Shreyans!
                 </h1>
                 {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-                <p className="text-pretty text-base tracking-wider text-primary/80 sm:text-lg">
+                <p className="text-pretty text-base tracking-wider text-primary/80 sm:text-lg xl:text-xl">
                     A software developer from India 🇮🇳. Also a student and
                     entrepreneur. About <BirthTime /> old. Into everything from
                     tech and business to finance, law, science, food, and
@@ -137,7 +137,8 @@ const Home = () => {
                         title="Blockvote"
                     />
                     <Project
-                        description="A platform for freelancers and companies to work together"
+                        badge="Archived"
+                        description="Simple freelance platform"
                         githubLink="https://github.com/duelance-app"
                         link="https://duelance.app"
                         title="Duelance"

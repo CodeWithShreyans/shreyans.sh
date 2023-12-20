@@ -27,6 +27,8 @@ export const env = createEnv({
         NODE_ENV: process.env.NODE_ENV,
 
         SENTRY_TOKEN: process.env.SENTRY_TOKEN,
+
+        VERCEL_URL: process.env.VERCEL_URL,
     },
     /**
      * Specify your server-side environment variables schema here. This way you can ensure the app
@@ -38,6 +40,8 @@ export const env = createEnv({
             .default("development"),
 
         SENTRY_TOKEN: z.string(),
+
+        VERCEL_URL: z.string().optional(),
     },
     /**
      * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
