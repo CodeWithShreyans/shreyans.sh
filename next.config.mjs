@@ -9,39 +9,39 @@ const { env } = await import("./app/env.mjs")
 
 /** @type {import("next").NextConfig} */
 const config = {
-    compiler: {
-        removeConsole:
-            env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
-    },
-    experimental: {
-        ppr: true,
-        useDeploymentId: true,
-        useDeploymentIdServerActions: true,
-        webpackBuildWorker: true,
-    },
-    reactStrictMode: true,
-    transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
+   compiler: {
+      removeConsole:
+         env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
+   },
+   experimental: {
+      ppr: true,
+      useDeploymentId: true,
+      useDeploymentIdServerActions: true,
+      webpackBuildWorker: true,
+   },
+   reactStrictMode: true,
+   transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
 }
 
 const sentryConfig = {
-    options: {
-        automaticVercelMonitors: true,
-        disableLogger: true,
-        hideSourceMaps: true,
-        transpileClientSDK: false,
-        tunnelRoute: "/monitoring",
-        widenClientFileUpload: true,
-    },
-    webpack: {
-        org: "shreyans-jain-org",
-        project: "shreyans-sh",
-        silent: true,
-    },
+   options: {
+      automaticVercelMonitors: true,
+      disableLogger: true,
+      hideSourceMaps: true,
+      transpileClientSDK: false,
+      tunnelRoute: "/monitoring",
+      widenClientFileUpload: true,
+   },
+   webpack: {
+      org: "shreyans-jain-org",
+      project: "shreyans-sh",
+      silent: true,
+   },
 }
 
 export default withSentryConfig(
-    // @ts-expect-error Contentlayer NextConfig type issue
-    withContentlayer(config),
-    sentryConfig.webpack,
-    sentryConfig.options,
+   // @ts-expect-error Contentlayer NextConfig type issue
+   withContentlayer(config),
+   sentryConfig.webpack,
+   sentryConfig.options,
 )

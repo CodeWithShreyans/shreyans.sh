@@ -12,18 +12,18 @@ import P from "./p"
 import Ul from "./ul"
 
 const components = {
-    a: A,
-    blockquote: Blockquote,
-    h1: H1,
-    h2: H2,
-    h3: H3,
-    h4: H4,
-    hr: Hr,
-    img: Img,
-    ol: Ol,
-    p: P,
-    pre: Code,
-    ul: Ul,
+   a: A,
+   blockquote: Blockquote,
+   h1: H1,
+   h2: H2,
+   h3: H3,
+   h4: H4,
+   hr: Hr,
+   img: Img,
+   ol: Ol,
+   p: P,
+   pre: Code,
+   ul: Ul,
 }
 
 export type Components = typeof components
