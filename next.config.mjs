@@ -13,12 +13,7 @@ const config = {
       removeConsole:
          env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
    },
-   experimental: {
-      ppr: true,
-      useDeploymentId: true,
-      useDeploymentIdServerActions: true,
-      webpackBuildWorker: true,
-   },
+
    reactStrictMode: true,
    transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
 }
