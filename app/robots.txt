@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /_next/
 
 Sitemap: https://shreyans.sh/sitemap.xml
