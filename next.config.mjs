@@ -37,7 +37,6 @@ const sentryConfig = {
 }
 
 export default withSentryConfig(
-    // @ts-expect-error Contentlayer NextConfig type issue
     withContentlayer(config),
     sentryConfig.webpack,
     sentryConfig.options,
