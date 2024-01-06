@@ -47,7 +47,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ asChild = false, className, size, variant, ...props }, ref) => {
         const Comp = asChild ? Slot : "button"
         return (
-            // @ts-expect-error Radix ReactNode issue
             <Comp
                 ref={ref}
                 className={cn(buttonVariants({ variant, size, className }))}
