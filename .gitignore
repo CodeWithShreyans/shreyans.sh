@@ -45,3 +45,5 @@ yarn-error.log*
 /.contentlayer
 # Sentry Config File
 .sentryclirc
+
+certificates
