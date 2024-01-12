@@ -11,7 +11,7 @@ const Code = ({
         <Bright
             lang={className?.replace("language-", "")}
             lineNumbers={true}
-            theme="dracula"
+            theme="github-dark"
         >
             {children}
         </Bright>

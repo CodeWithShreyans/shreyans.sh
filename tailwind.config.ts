@@ -1,4 +1,19 @@
 import { type Config } from "tailwindcss"
+// @ts-ignore
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"
+import twAnimate from "tailwindcss-animate"
+
+// biome-ignore lint/suspicious/noExplicitAny: TW Lib doesn't provide types
+const addVariablesForColors = ({ addBase, theme }: any) => {
+    const allColors = flattenColorPalette(theme("colors"))
+    const newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
+    )
+
+    addBase({
+        ":root": newVars,
+    })
+}
 
 module.exports = {
     content: [
@@ -10,7 +25,7 @@ module.exports = {
     future: {
         hoverOnlyWhenSupported: true,
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [twAnimate, addVariablesForColors],
     theme: {
         container: {
             center: true,

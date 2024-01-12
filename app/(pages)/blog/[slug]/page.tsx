@@ -10,6 +10,7 @@ import { Separator } from "@/components/shadcn/separator"
 import { siteConfig } from "@/config/site"
 
 import { Views } from "../views"
+import { TracingBeam } from "@/components/aceternity/tracing-beam"
 
 export const generateStaticParams = () =>
     allPosts.map((post) => ({
@@ -71,4 +72,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     )
 }
 
-export default PostLayout
+const Page = ({ params }: { params: { slug: string } }) => {
+    return (
+        <TracingBeam>
+            <PostLayout params={params} />
+        </TracingBeam>
+    )
+}
+
+export default Page
