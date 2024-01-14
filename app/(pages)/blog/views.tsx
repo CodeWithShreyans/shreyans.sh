@@ -27,6 +27,7 @@ const getViews = async (slug: string) => {
     api.searchParams.set("query", `(transaction:/blog/${slug})`)
     const views = await fetch(api, {
         headers: {
+            // biome-ignore lint/style/useNamingConvention: <explanation>
             Authorization: `Bearer ${env.SENTRY_TOKEN}`,
         },
     })

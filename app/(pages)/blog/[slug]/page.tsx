@@ -1,16 +1,16 @@
 import { Suspense } from "react"
 
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 
 import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
-import components from "@/components/mdx"
+import { components } from "@/components/mdx"
 import { Separator } from "@/components/shadcn/separator"
 import { siteConfig } from "@/config/site"
 
-import { Views } from "../views"
 import { TracingBeam } from "@/components/aceternity/tracing-beam"
+import { Views } from "../views"
 
 export const generateStaticParams = () =>
     allPosts.map((post) => ({

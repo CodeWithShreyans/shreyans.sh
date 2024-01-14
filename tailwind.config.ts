@@ -1,7 +1,7 @@
-import { type Config } from "tailwindcss"
+import type { Config } from "tailwindcss"
+import twAnimate from "tailwindcss-animate"
 // @ts-ignore
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"
-import twAnimate from "tailwindcss-animate"
 
 // biome-ignore lint/suspicious/noExplicitAny: TW Lib doesn't provide types
 const addVariablesForColors = ({ addBase, theme }: any) => {

@@ -1,4 +1,4 @@
-const Blockquote = ({
+export const Blockquote = ({
     children,
     ...rest
 }: {
@@ -11,5 +11,3 @@ const Blockquote = ({
         </blockquote>
     )
 }
-
-export default Blockquote

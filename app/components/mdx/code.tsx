@@ -1,6 +1,6 @@
 import { Code as Bright } from "bright"
 
-const Code = ({
+export const Code = ({
     children,
     className,
 }: {
@@ -17,5 +17,3 @@ const Code = ({
         </Bright>
     )
 }
-
-export default Code

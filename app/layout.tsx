@@ -1,6 +1,6 @@
-import "@/(pages)/globals.css"
+import "./globals.css"
 
-import { type Metadata, type Viewport } from "next"
+import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 
 import { GeistMono } from "geist/font/mono"
