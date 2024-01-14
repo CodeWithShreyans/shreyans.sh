@@ -10,7 +10,7 @@ import { LinkButton } from "@/lib/utils/next"
 
 import "./header.css"
 
-const Header = () => {
+export const Header = () => {
     return (
         <header
             className="mt-1 flex h-[5dvh] w-full items-center justify-between p-1 non-touch:animate-down"
@@ -35,5 +35,3 @@ const Header = () => {
         </header>
     )
 }
-
-export default Header

@@ -14,7 +14,7 @@ export const size = {
 export const contentType = "image/png"
 
 export default function OG() {
-    const BG_OPTIONS = [
+    const bgOptions = [
         {
             backgroundColor: "#8BC6EC",
             backgroundImage:
@@ -50,7 +50,7 @@ export default function OG() {
 
     return new ImageResponse(
         <div
-            style={BG_OPTIONS[Math.floor(Math.random() * BG_OPTIONS.length)]}
+            style={bgOptions[Math.floor(Math.random() * bgOptions.length)]}
             tw="w-full h-full"
         />,
         {

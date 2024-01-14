@@ -6,7 +6,15 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "all": true
+            "all": true,
+            "style": {
+                "useNamingConvention": {
+                    "level": "warn",
+                    "options": {
+                        "strictCase": false
+                    }
+                }
+            }
         }
     },
     "formatter": {
@@ -32,11 +40,27 @@
     },
     "overrides": [
         {
-            "include": ["**/page.tsx", "**/layout.tsx"],
+            "include": [
+                "**/page.tsx",
+                "**/layout.tsx",
+                "contentlayer.config.ts",
+                "global-error.tsx",
+                "next.config.mjs"
+            ],
             "linter": {
                 "rules": {
                     "style": {
                         "noDefaultExport": "off"
+                    }
+                }
+            }
+        },
+        {
+            "include": ["app/env.mjs"],
+            "linter": {
+                "rules": {
+                    "style": {
+                        "useNamingConvention": "off"
                     }
                 }
             }

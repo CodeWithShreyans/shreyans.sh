@@ -32,24 +32,3 @@ export const range = (start: number, end: number, step = 1) => {
     }
     return output
 }
-
-export const getTimeElapsed = (startDateMs: number) => {
-    const timeDifference = Date.now() - startDateMs
-
-    // Define milliseconds in a unit of time
-    const millisecondsInSecond = 1000
-    const millisecondsInMinute = millisecondsInSecond * 60
-    const millisecondsInHour = millisecondsInMinute * 60
-    const millisecondsInDay = millisecondsInHour * 24
-    const millisecondsInMonth = millisecondsInDay * (365.25 / 12) // Approximate days in a month
-
-    // Calculate years, months, days, hours, minutes, and seconds
-    const years = Math.floor(timeDifference / millisecondsInMonth / 12)
-    const months = Math.floor((timeDifference / millisecondsInMonth) % 12)
-    const days = Math.floor((timeDifference / millisecondsInDay) % 30.44) // Approximate days in a month
-    const hours = Math.floor((timeDifference / millisecondsInHour) % 24)
-    const minutes = Math.floor((timeDifference / millisecondsInMinute) % 60)
-    const seconds = Math.floor((timeDifference / millisecondsInSecond) % 60)
-
-    return { days, hours, minutes, months, seconds, years }
-}

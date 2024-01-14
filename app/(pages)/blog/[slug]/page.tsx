@@ -36,6 +36,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         (post) => post._raw.flattenedPath === params.slug,
     )
 
+    // biome-ignore lint/style/useNamingConvention: <explanation>
     const Content = useMDXComponent(post?.body.code ?? "")
 
     return (

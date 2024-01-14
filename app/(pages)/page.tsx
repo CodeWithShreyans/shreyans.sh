@@ -12,7 +12,7 @@ import {
     GlowingStarsDescription,
     GlowingStarsTitle,
 } from "@/components/aceternity/glowing-stars"
-import BirthTime from "@/components/birth-time"
+import { BirthTime } from "@/components/birth-time"
 import { Badge } from "@/components/shadcn/badge"
 import { Button } from "@/components/shadcn/button"
 import { Separator } from "@/components/shadcn/separator"

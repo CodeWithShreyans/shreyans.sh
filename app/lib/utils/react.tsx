@@ -31,20 +31,20 @@ const useToggle = (initialValue = false) => {
 }
 
 const usePrefersReducedMotion = () => {
-    const QUERY = "(prefers-reduced-motion: no-preference)"
+    const query = "(prefers-reduced-motion: no-preference)"
     const isRenderingOnServer = typeof window === "undefined"
     const getInitialState = () => {
         // For our initial server render, we won't know if the user
         // prefers reduced motion, but it doesn't matter. This value
         // will be overwritten on the client, before any animations
         // occur.
-        return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches
+        return isRenderingOnServer ? true : !window.matchMedia(query).matches
     }
     const [prefersReducedMotion, setPrefersReducedMotion] =
         React.useState(getInitialState)
     // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
     React.useEffect(() => {
-        const mediaQueryList = window.matchMedia(QUERY)
+        const mediaQueryList = window.matchMedia(query)
         const listener = (event: MediaQueryListEvent) => {
             setPrefersReducedMotion(!event.matches)
         }
