@@ -1,6 +1,6 @@
 import { Code as Bright } from "bright"
 
-const Code = ({
+export const Code = ({
     children,
     className,
 }: {
@@ -11,11 +11,9 @@ const Code = ({
         <Bright
             lang={className?.replace("language-", "")}
             lineNumbers={true}
-            theme="dracula"
+            theme="github-dark"
         >
             {children}
         </Bright>
     )
 }
-
-export default Code

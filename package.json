@@ -51,6 +51,8 @@
     "autoprefixer": "^10.4.16",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.12",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
     "postcss": "^8.4.33",
     "tailwindcss": "insiders",
     "typescript": "^5.3.3"

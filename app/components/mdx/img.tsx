@@ -8,7 +8,7 @@ type ImgProps = {
     src?: string
 }
 
-const Img = ({ alt, src, ...rest }: ImgProps) => {
+export const Img = ({ alt, src, ...rest }: ImgProps) => {
     if (!src) return null
     return (
         <Image
@@ -21,5 +21,3 @@ const Img = ({ alt, src, ...rest }: ImgProps) => {
         />
     )
 }
-
-export default Img

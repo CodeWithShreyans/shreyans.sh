@@ -1,4 +1,4 @@
-const Ul = ({
+export const Ul = ({
     children,
     ...rest
 }: {
@@ -11,5 +11,3 @@ const Ul = ({
         </ul>
     )
 }
-
-export default Ul

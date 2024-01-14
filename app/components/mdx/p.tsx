@@ -1,4 +1,4 @@
-const P = ({
+export const P = ({
     children,
     ...rest
 }: {
@@ -12,5 +12,3 @@ const P = ({
         </p>
     )
 }
-
-export default P

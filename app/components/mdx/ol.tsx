@@ -1,4 +1,4 @@
-const Ol = ({
+export const Ol = ({
     children,
     ...rest
 }: {
@@ -11,5 +11,3 @@ const Ol = ({
         </ol>
     )
 }
-
-export default Ol

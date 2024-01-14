@@ -8,7 +8,7 @@ type AProps = {
     rest: React.HTMLProps<HTMLAnchorElement>
 }
 
-const A = ({ children, href, ...rest }: AProps) => {
+export const A = ({ children, href, ...rest }: AProps) => {
     const self = href
         ? href.startsWith("https://shreyans.sh") ||
           href.includes("localhost") ||
@@ -23,9 +23,7 @@ const A = ({ children, href, ...rest }: AProps) => {
             target={self ? "_self" : "_blank"}
         >
             {children}
-            {!self ? <ExternalLink className="-ml-0.5" size={20} /> : null}
+            {self ? null : <ExternalLink className="-ml-0.5" size={20} />}
         </LinkButton>
     )
 }
-
-export default A

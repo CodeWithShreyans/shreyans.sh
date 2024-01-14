@@ -26,7 +26,8 @@
             ".contentlayer/*",
             ".vercel/*",
             "app/components/shadcn/*",
-            "app/components/aceternity/*"
+            "app/components/aceternity/*",
+            "package.json"
         ]
     },
     "overrides": [

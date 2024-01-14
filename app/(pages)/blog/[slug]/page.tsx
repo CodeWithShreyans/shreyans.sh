@@ -1,14 +1,15 @@
 import { Suspense } from "react"
 
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 
 import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
-import components from "@/components/mdx"
+import { components } from "@/components/mdx"
 import { Separator } from "@/components/shadcn/separator"
 import { siteConfig } from "@/config/site"
 
+import { TracingBeam } from "@/components/aceternity/tracing-beam"
 import { Views } from "../views"
 
 export const generateStaticParams = () =>
@@ -71,4 +72,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     )
 }
 
-export default PostLayout
+const Page = ({ params }: { params: { slug: string } }) => {
+    return (
+        <TracingBeam>
+            <PostLayout params={params} />
+        </TracingBeam>
+    )
+}
+
+export default Page

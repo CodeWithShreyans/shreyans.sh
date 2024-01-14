@@ -2,7 +2,7 @@ import { Hash } from "lucide-react"
 
 import { LinkButton } from "@/lib/utils/next"
 
-const H4 = ({
+export const H4 = ({
     children,
     id,
     ...rest
@@ -22,5 +22,3 @@ const H4 = ({
         </LinkButton>
     )
 }
-
-export default H4
