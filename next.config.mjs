@@ -37,6 +37,7 @@ const sentryConfig = {
 }
 
 export default withSentryConfig(
+    // @ts-ignore Just pls stop the pain
     withContentlayer(config),
     sentryConfig.webpack,
     sentryConfig.options,
