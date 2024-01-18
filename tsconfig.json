@@ -19,7 +19,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./app/*"],
-            "contentlayer/generated": ["./.contentlayer/generated"]
+            "contentlayer/generated": ["./.contentlayer/generated"],
+            "react": ["node_modules/@types/react"]
         },
         "plugins": [{ "name": "next" }]
     },
