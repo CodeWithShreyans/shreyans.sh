@@ -11,6 +11,7 @@
         "esModuleInterop": true,
         "module": "esnext",
         "moduleResolution": "Bundler",
+        "moduleDetection": "force",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
