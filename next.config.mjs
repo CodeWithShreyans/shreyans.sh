@@ -17,28 +17,20 @@ const config = {
     transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
     experimental: {
         ppr: true,
+        reactCompiler: true,
     },
 }
 
 const sentryConfig = {
-    options: {
-        automaticVercelMonitors: true,
-        disableLogger: true,
-        hideSourceMaps: true,
-        transpileClientSDK: false,
-        tunnelRoute: "/monitoring",
-        widenClientFileUpload: true,
-    },
-    webpack: {
-        org: "shreyans-jain-org",
-        project: "shreyans-sh",
-        silent: true,
-    },
+    automaticVercelMonitors: true,
+    disableLogger: true,
+    hideSourceMaps: true,
+    transpileClientSDK: false,
+    tunnelRoute: "/monitoring",
+    widenClientFileUpload: true,
+    org: "shreyans-jain-org",
+    project: "shreyans-sh",
+    silent: true,
 }
 
-export default withSentryConfig(
-    // @ts-ignore Just pls stop the pain
-    withContentlayer(config),
-    sentryConfig.webpack,
-    sentryConfig.options,
-)
+export default withSentryConfig(withContentlayer(config), sentryConfig)
