@@ -107,15 +107,78 @@ const Home = () => {
     return (
         <main className="flex flex-col gap-4 tracking-wide">
             <div className="space-y-2">
-                <div className="w-36 sm:w-44">
-                    <Image
-                        alt="Profile Picture"
-                        className="!relative rounded-full"
-                        fill={true}
-                        loading="lazy"
-                        placeholder="blur"
-                        src={ProfilePic}
-                    />
+                <div className="flex items-center justify-between">
+                    <div className="w-36 sm:w-44">
+                        <Image
+                            alt="Profile Picture"
+                            className="!relative rounded-full"
+                            fill={true}
+                            loading="lazy"
+                            placeholder="blur"
+                            src={ProfilePic}
+                        />
+                    </div>
+                    <div className="sm:flex gap-1 hidden">
+                        <div className="flex flex-col text-right">
+                            <div>X:</div>
+                            <div>Github:</div>
+                            <div>LinkedIn:</div>
+                            <div>Email:</div>
+                        </div>
+                        <div className="flex flex-col gap-1 text-left items-start pt-0.5">
+                            <Button
+                                asChild={true}
+                                className="h-auto p-0 tracking-normal underline underline-offset-4"
+                                variant="link"
+                            >
+                                <Link
+                                    href="https://x.com/CodeWShreyans"
+                                    target="_blank"
+                                >
+                                    @CodeWShreyans
+                                </Link>
+                            </Button>
+
+                            <Button
+                                asChild={true}
+                                className="h-auto p-0 underline tracking-normal underline-offset-4"
+                                variant="link"
+                            >
+                                <Link
+                                    href="https://github.com/CodeWithShreyans"
+                                    target="_blank"
+                                >
+                                    CodeWithShreyans
+                                </Link>
+                            </Button>
+
+                            <Button
+                                asChild={true}
+                                className="h-auto p-0 tracking-normal underline underline-offset-4"
+                                variant="link"
+                            >
+                                <Link
+                                    href="https://www.linkedin.com/in/sjain07"
+                                    target="_blank"
+                                >
+                                    sjain07
+                                </Link>
+                            </Button>
+
+                            <Button
+                                asChild={true}
+                                className="h-auto p-0 tracking-normal underline underline-offset-4"
+                                variant="link"
+                            >
+                                <Link
+                                    href="mailto:shreyans@shreyans.sh"
+                                    target="_blank"
+                                >
+                                    shreyans@shreyans.sh
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
                 <h1 className="font-mono text-lg font-semibold sm:text-xl md:text-2xl xl:text-3xl">
                     Hey there, I&apos;m Shreyans!
@@ -142,6 +205,12 @@ const Home = () => {
                         description="Search your emails with AI"
                         link="https://findy-thingy.shreyans.sh"
                         title="Findy Thingy"
+                    />
+                    <Project
+                        description="Know if your plane is safe or not"
+                        githubLink="https://github.com/CodeWithShreyans/safeintheair"
+                        link="https://safeintheair.shreyans.sh"
+                        title="Safe in the Air"
                     />
                     <Project
                         description="My personal corner of the web"
@@ -248,6 +317,21 @@ const Home = () => {
                             }
                         />
                         <StackItem
+                            title="Cloudflare"
+                            description={<>Help! I'm under attack!</>}
+                            image={
+                                <svg
+                                    role="img"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="absolute bottom-4 h-[90.5%] left-[50%] -translate-x-1/2 z-10 opacity-50"
+                                >
+                                    <title>Cloudflare</title>
+                                    <path d="M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-8.6592-.1123a.1559.1559 0 0 1-.1333-.0713c-.0283-.042-.0351-.0986-.021-.1553.0278-.084.1123-.1484.2036-.1562l8.7359-.1123c1.0351-.0489 2.1601-.8868 2.5537-1.9136l.499-1.3013c.0215-.0561.0293-.1128.0147-.168-.5625-2.5463-2.835-4.4453-5.5499-4.4453-2.5039 0-4.6284 1.6177-5.3876 3.8614-.4927-.3658-1.1187-.5625-1.794-.499-1.2026.119-2.1665 1.083-2.2861 2.2856-.0283.31-.0069.6128.0635.894C1.5683 13.171 0 14.7754 0 16.752c0 .1748.0142.3515.0352.5273.0141.083.0844.1475.1689.1475h15.9814c.0909 0 .1758-.0645.2032-.1553l.12-.4268zm2.7568-5.5634c-.0771 0-.1611 0-.2383.0112-.0566 0-.1054.0415-.127.0976l-.3378 1.1744c-.1475.5068-.0918.9707.1543 1.3164.2256.3164.6055.498 1.0625.5195l1.8437.1133c.0557 0 .1055.0263.1329.0703.0283.043.0351.1074.0214.1562-.0283.084-.1132.1485-.204.1553l-1.921.1123c-1.041.0488-2.1582.8867-2.5527 1.914l-.1406.3585c-.0283.0713.0215.1416.0986.1416h6.5977c.0771 0 .1474-.0489.169-.126.1122-.4082.1757-.837.1757-1.2803 0-2.6025-2.125-4.727-4.7344-4.727" />
+                                </svg>
+                            }
+                        />
+                        <StackItem
                             title="Tailwind CSS"
                             description="CSS for Humans"
                             image={
@@ -278,17 +362,17 @@ const Home = () => {
                             }
                         />
                         <StackItem
-                            title="PlanetScale"
+                            title="Turso"
                             description="My 5 users go brrrrr"
                             image={
                                 <svg
                                     role="img"
                                     viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="absolute bottom-4 h-[83%] left-[47%] -translate-x-1/2 z-10 opacity-50"
+                                    className="absolute bottom-4 h-[83%] left-[50%] -translate-x-1/2 z-10 opacity-50"
                                 >
-                                    <title>PlanetScale</title>
-                                    <path d="M0 12C0 5.373 5.373 0 12 0c4.873 0 9.067 2.904 10.947 7.077l-15.87 15.87a11.981 11.981 0 0 1-1.935-1.099L14.99 12H12l-8.485 8.485A11.962 11.962 0 0 1 0 12Zm12.004 12L24 12.004C23.998 18.628 18.628 23.998 12.004 24Z" />
+                                    <title>Turso</title>
+                                    <path d="m23.31.803-.563-.42-1.11 1.189-.891-1.286-.512.235.704 1.798-.326.35L18.082 0l-.574.284 2.25 4.836-2.108.741h-.05l-1.143-1.359-1.144 1.36H8.687l-1.144-1.36-1.146 1.363H6.36l-2.12-.745L6.491.284 5.919 0l-2.53 2.668-.327-.349.705-1.798-.512-.236-.89 1.287L1.253.382.69.804 2.42 3.69l-.89.939.311 2.375 2.061.787L3.9 8.817H1.947v.444l.755 1.078 1.197.433v6.971l3.057 4.55L7.657 24l1.101-1.606L9.9 24l.999-1.606L12 24l1.102-1.606L14.1 24l1.141-1.606L16.343 24l.701-1.706 3.058-4.55v-6.972l1.196-.433.756-1.078v-.444h-1.952l.003-1.03 2.054-.784.311-2.375-.89-.939zm-8.93 18.718H8.033l.793-1.615.794 1.615.793-1.083.793 1.083.794-1.083.793 1.083.794-1.083.793 1.083.793-1.615.794 1.615zm3.886-7.39-3.3 1.084-.143 3.061-2.827.627-2.826-.627-.142-3.06-3.3-1.085v-1.635l4.266 1.21-.052 4.126h4.109l-.052-4.127 4.266-1.209z" />
                                 </svg>
                             }
                         />
@@ -349,25 +433,6 @@ const Home = () => {
                                 >
                                     <title>Bun</title>
                                     <path d="M12 22.596c6.628 0 12-4.338 12-9.688 0-3.318-2.057-6.248-5.219-7.986-1.286-.715-2.297-1.357-3.139-1.89C14.058 2.025 13.08 1.404 12 1.404c-1.097 0-2.334.785-3.966 1.821a49.92 49.92 0 0 1-2.816 1.697C2.057 6.66 0 9.59 0 12.908c0 5.35 5.372 9.687 12 9.687v.001ZM10.599 4.715c.334-.759.503-1.58.498-2.409 0-.145.202-.187.23-.029.658 2.783-.902 4.162-2.057 4.624-.124.048-.199-.121-.103-.209a5.763 5.763 0 0 0 1.432-1.977Zm2.058-.102a5.82 5.82 0 0 0-.782-2.306v-.016c-.069-.123.086-.263.185-.172 1.962 2.111 1.307 4.067.556 5.051-.082.103-.23-.003-.189-.126a5.85 5.85 0 0 0 .23-2.431Zm1.776-.561a5.727 5.727 0 0 0-1.612-1.806v-.014c-.112-.085-.024-.274.114-.218 2.595 1.087 2.774 3.18 2.459 4.407a.116.116 0 0 1-.049.071.11.11 0 0 1-.153-.026.122.122 0 0 1-.022-.083 5.891 5.891 0 0 0-.737-2.331Zm-5.087.561c-.617.546-1.282.76-2.063 1-.117 0-.195-.078-.156-.181 1.752-.909 2.376-1.649 2.999-2.778 0 0 .155-.118.188.085 0 .304-.349 1.329-.968 1.874Zm4.945 11.237a2.957 2.957 0 0 1-.937 1.553c-.346.346-.8.565-1.286.62a2.178 2.178 0 0 1-1.327-.62 2.955 2.955 0 0 1-.925-1.553.244.244 0 0 1 .064-.198.234.234 0 0 1 .193-.069h3.965a.226.226 0 0 1 .19.07c.05.053.073.125.063.197Zm-5.458-2.176a1.862 1.862 0 0 1-2.384-.245 1.98 1.98 0 0 1-.233-2.447c.207-.319.503-.566.848-.713a1.84 1.84 0 0 1 1.092-.11c.366.075.703.261.967.531a1.98 1.98 0 0 1 .408 2.114 1.931 1.931 0 0 1-.698.869v.001Zm8.495.005a1.86 1.86 0 0 1-2.381-.253 1.964 1.964 0 0 1-.547-1.366c0-.384.11-.76.32-1.079.207-.319.503-.567.849-.713a1.844 1.844 0 0 1 1.093-.108c.367.076.704.262.968.534a1.98 1.98 0 0 1 .4 2.117 1.932 1.932 0 0 1-.702.868Z" />
-                                </svg>
-                            }
-                        />
-                        <StackItem
-                            title="Biome"
-                            description={
-                                <>
-                                    error <i>biome(noStupidity)</i>
-                                </>
-                            }
-                            image={
-                                <svg
-                                    role="img"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="absolute bottom-[0.37rem] h-[93.5%] left-1/2 -translate-x-1/2 z-10 opacity-50"
-                                >
-                                    <title>Biome</title>
-                                    <path d="m12 1.608-5.346 9.259a12.069 12.069 0 0 1 6.326-.219l1.807.426-1.7 7.208-1.809-.427c-2.224-.524-4.361.644-5.264 2.507l-1.672-.809c1.276-2.636 4.284-4.232 7.364-3.505l.847-3.592A10.211 10.211 0 0 0 0 22.392h24L12 1.608Z" />
                                 </svg>
                             }
                         />
