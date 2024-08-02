@@ -13,7 +13,7 @@ export const Footer = () => {
                 className="flex h-[5vh] items-center justify-between p-1"
                 id="footer"
             >
-                <p className="cursor-default">Shreyans Jain</p>
+                <p className="cursor-default">SJ</p>
                 <div className="flex gap-1">
                     <Button asChild={true} variant="ghost">
                         <Link
