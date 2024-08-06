@@ -18,7 +18,7 @@ export const Footer = () => {
                     <Button asChild={true} variant="ghost">
                         <Link
                             aria-label="Github"
-                            href="https://github.com/destroyerxyz"
+                            href="https://github.com/CodeWithShreyans"
                         >
                             <svg
                                 viewBox="0 0 24 24"
@@ -33,7 +33,7 @@ export const Footer = () => {
                     <Button asChild={true} variant="ghost">
                         <Link
                             aria-label="Twitter"
-                            href="https://twitter.com/Destroyer_Xyz"
+                            href="https://twitter.com/CodeWShreyans"
                         >
                             <svg
                                 viewBox="0 0 24 24"
