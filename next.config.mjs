@@ -16,8 +16,8 @@ const config = {
     reactStrictMode: true,
     transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
     experimental: {
-        ppr: true,
-        reactCompiler: true,
+        // ppr: true,
+        // reactCompiler: true,
     },
 }
 
