@@ -84,6 +84,6 @@
     }
 
     main {
-        @apply animate-fade-in
+        @apply animate-fade-in;
     }
 }

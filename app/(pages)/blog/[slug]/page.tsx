@@ -3,7 +3,7 @@ import { Suspense } from "react"
 import type { Metadata } from "next"
 
 import { allPosts } from "contentlayer/generated"
-import { useMDXComponent } from "next-contentlayer/hooks"
+import { useMDXComponent } from "next-contentlayer2/hooks"
 
 import { components } from "@/components/mdx"
 import { Separator } from "@/components/shadcn/separator"
@@ -17,11 +17,10 @@ export const generateStaticParams = () =>
         slug: post._raw.flattenedPath,
     }))
 
-export const generateMetadata = ({
-    params,
-}: {
-    params: { slug: string }
-}): Metadata => {
+export const generateMetadata = async (props: {
+    params: Promise<{ slug: string }>
+}): Promise<Metadata> => {
+    const params = await props.params
     const post = allPosts.find(
         (post) => post._raw.flattenedPath === params.slug,
     )
@@ -64,7 +63,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                 </div>
                 <Separator className="my-2 py-0.5" />
                 <div className="flex flex-col gap-3 px-1" id="content">
-                    {/* @ts-expect-error Code is async function */}
                     <Content components={components} />
                 </div>
             </article>
@@ -72,7 +70,8 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     )
 }
 
-const Page = ({ params }: { params: { slug: string } }) => {
+const Page = async (props: { params: Promise<{ slug: string }> }) => {
+    const params = await props.params
     return (
         <TracingBeam>
             <PostLayout params={params} />
