@@ -196,15 +196,22 @@ const Home = () => {
                 <h2 className="text-lg font-medium sm:text-xl">My Work</h2>
                 <div className="grid grid-flow-row grid-cols-1 gap-x-[4%] sm:grid-cols-2 py-4">
                     <Project
-                        badge="Private"
+                        badge="Pre-Release"
+                        description="Offline access to emergency guides"
+                        link="https://useguider.com"
+                        title="Guider"
+                    />
+                    <Project
+                        badge="Pre-Release"
                         description="Complete event manager for students"
+                        link="https://eventlyhq.com"
                         title="Evently"
                     />
                     <Project
-                        badge="Private"
-                        description="Search your emails with AI"
-                        link="https://findy-thingy.shreyans.sh"
-                        title="Findy Thingy"
+                        description="Custom PCB to test your water"
+                        githubLink="https://github.com/CodeWithShreyans/trail-water-tester"
+                        link="https://youtu.be/ufMUJ9D1fi8"
+                        title="Water Quality Tester"
                     />
                     <Project
                         description="Know if your plane is safe or not"
@@ -221,14 +228,21 @@ const Home = () => {
                     <Project
                         description="Simple Upstash Redis client"
                         githubLink="https://github.com/destroyerxyz/upstash-kv"
-                        link="https://github.com/destroyerxyz/upstash-kv"
+                        link="https://www.npmjs.com/package/upstash-kv"
                         title="upstash-kv"
                     />
                     <Project
-                        badge="Borked"
+                        badge="Archived"
+                        description="Search your emails with AI"
+                        link="https://findy-thingy.shreyans.sh"
+                        githubLink="https://github.com/CodeWithShreyans/findy-thingy"
+                        title="Findy Thingy"
+                    />
+                    <Project
+                        badge="Archived"
                         description="A newsletter curated by AI"
                         githubLink="https://github.com/destroyerxyz/theaichronicles"
-                        link="https://ai.shreyans.sh"
+                        link="https://taic.shreyans.sh"
                         title="The AI Chronicles"
                     />
                     <Project
