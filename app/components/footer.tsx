@@ -13,7 +13,9 @@ export const Footer = () => {
                 className="flex h-[5vh] items-center justify-between p-1"
                 id="footer"
             >
-                <p className="cursor-default italic font-medium">0x7D7</p>
+                <p className="cursor-default italic font-medium w-full">
+                    0x7D7
+                </p>
                 <div className="flex gap-1">
                     <Button asChild={true} variant="ghost">
                         <Link
