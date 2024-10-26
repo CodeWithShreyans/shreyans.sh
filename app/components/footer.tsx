@@ -1,7 +1,5 @@
 import Link from "next/link"
 
-import "./header.css"
-
 import { Button } from "@/components/shadcn/button"
 import { Separator } from "@/components/shadcn/separator"
 
@@ -13,14 +11,15 @@ export const Footer = () => {
                 className="flex h-[5vh] items-center justify-between p-1"
                 id="footer"
             >
-                <p className="cursor-default italic font-medium w-full">
+                <p className="cursor-default italic font-medium w-[50%]">
                     0x7D7
                 </p>
-                <div className="flex gap-1">
+                <div className="flex gap-1 w-[50%] items-center">
                     <Button asChild={true} variant="ghost">
                         <Link
                             aria-label="Github"
                             href="https://github.com/CodeWithShreyans"
+                            className="w-[25%] !p-2"
                         >
                             <svg
                                 viewBox="0 0 24 24"
@@ -36,6 +35,7 @@ export const Footer = () => {
                         <Link
                             aria-label="Twitter"
                             href="https://twitter.com/CodeWShreyans"
+                            className="w-[25%] !p-2"
                         >
                             <svg
                                 viewBox="0 0 24 24"
@@ -51,6 +51,7 @@ export const Footer = () => {
                         <Link
                             aria-label="LinkedIn"
                             href="https://www.linkedin.com/in/sjain07"
+                            className="w-[25%] !p-2"
                         >
                             <svg
                                 role="img"
@@ -67,6 +68,7 @@ export const Footer = () => {
                         <Link
                             aria-label="Email"
                             href="mailto:shreyans@shreyans.sh"
+                            className="w-[25%] !p-2"
                         >
                             <svg
                                 viewBox="0 0 24 24"

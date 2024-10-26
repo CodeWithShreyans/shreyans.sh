@@ -62,11 +62,11 @@ export const viewport: Viewport = {
     ],
 }
 
-export default function RootLayout({
+const RootLayout = ({
     children,
 }: {
     children: React.ReactNode
-}) {
+}) => {
     return (
         <html
             className={cn(
@@ -99,3 +99,5 @@ export default function RootLayout({
         </html>
     )
 }
+
+export default RootLayout

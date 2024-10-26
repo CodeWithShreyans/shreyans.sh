@@ -5,11 +5,24 @@ import Link from "next/link"
 import { allPosts } from "contentlayer/generated"
 
 import { Button } from "@/components/shadcn/button"
+import { siteConfig } from "@/config/site"
 import { formatDuration, intervalToDuration } from "date-fns"
 import { Views } from "./views"
 
+export const dynamic = "force-static"
+
 export const metadata = {
     title: "Shreyans' Blog",
+    description: "Facts, opinions and randomness",
+    twitter: {
+        title: "Shreyans' Blog",
+        description: "Facts, opinions and randomness",
+    },
+    openGraph: {
+        title: "Shreyans' Blog",
+        description: "Facts, opinions and randomness",
+        url: `${siteConfig.url}/blog`,
+    },
 }
 
 const Page = () => {
@@ -53,12 +66,12 @@ const Page = () => {
                                                             : time.months
                                                               ? "months"
                                                               : time.days
-                                                                  ? "days"
-                                                                  : time.hours
-                                                                      ? "hours"
-                                                                      : time.minutes
-                                                                          ? "minutes"
-                                                                          : "seconds",
+                                                                ? "days"
+                                                                : time.hours
+                                                                  ? "hours"
+                                                                  : time.minutes
+                                                                    ? "minutes"
+                                                                    : "seconds",
                                                     ],
                                                 })}{" "}
                                                 ago)

@@ -5,7 +5,6 @@ import Link from "next/link"
 
 import DarkLogo from "@/../public/logo-dark.svg"
 import LightLogo from "@/../public/logo-light.svg"
-// import Logo from "@/../public/logo.png"
 import { LinkButton } from "@/lib/utils/next"
 
 import "./header.css"

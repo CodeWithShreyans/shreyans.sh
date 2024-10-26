@@ -12,6 +12,8 @@ import { siteConfig } from "@/config/site"
 import { TracingBeam } from "@/components/aceternity/tracing-beam"
 import { Views } from "../views"
 
+export const dynamic = "force-static"
+
 export const generateStaticParams = () =>
     allPosts.map((post) => ({
         slug: post._raw.flattenedPath,
@@ -24,9 +26,21 @@ export const generateMetadata = async (props: {
     const post = allPosts.find(
         (post) => post._raw.flattenedPath === params.slug,
     )
+    const title = `${post?.title} - Blog`
+    const description = post?.brief
     return {
         keywords: siteConfig.baseKeywords.concat(post?.tags ?? []),
-        title: `${post?.title} - Blog`,
+        title: title,
+        description: description,
+        twitter: {
+            title: title,
+            description: description,
+        },
+        openGraph: {
+            title: title,
+            description: description,
+            url: post?.url,
+        },
     }
 }
 

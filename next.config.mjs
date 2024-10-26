@@ -13,10 +13,10 @@ const config = {
         removeConsole:
             env.NODE_ENV === "production" ? { exclude: ["error"] } : undefined,
     },
-    reactStrictMode: true,
     transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
     experimental: {
-        // ppr: true,
+        dynamicIO: false,
+        cssChunking: "loose",
         // reactCompiler: true,
     },
 }
