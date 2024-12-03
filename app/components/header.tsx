@@ -8,6 +8,7 @@ import LightLogo from "@/../public/logo-light.svg"
 import { LinkButton } from "@/lib/utils/next"
 
 import "./header.css"
+import { DarkModeToggle } from "./dark-mode-toggle"
 
 export const Header = () => {
     return (
@@ -28,6 +29,9 @@ export const Header = () => {
                     src={DarkLogo as StaticImageData}
                 />
             </Link>
+
+            <DarkModeToggle />
+
             <LinkButton className="no-underline hover:underline" href="/blog">
                 Blog
             </LinkButton>

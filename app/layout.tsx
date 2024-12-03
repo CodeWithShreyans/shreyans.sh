@@ -74,6 +74,7 @@ const RootLayout = ({
                 "*:col-[2] grid grid-cols-[1fr_min(60ch,_100%)_1fr] scroll-smooth",
             )}
             lang="en"
+            suppressHydrationWarning
         >
             <body
                 className="flex h-fit min-h-screen flex-col items-center justify-between gap-2 px-4 text-base"

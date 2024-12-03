@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from "react"
+import { type ReactElement, type ReactNode, Suspense } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -25,6 +25,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/shadcn/carousel"
+import { SleepStatus } from "@/components/sleep-status"
 
 export const dynamic = "force-static"
 export const revalidate = 3600 // 1 hour
@@ -183,6 +184,7 @@ const Home = () => {
                 <h1 className="font-mono text-lg font-semibold sm:text-xl md:text-2xl xl:text-3xl">
                     Hey there, I&apos;m Shreyans!
                 </h1>
+                <SleepStatus />
                 {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <p className="text-pretty text-base tracking-wider text-primary/80 sm:text-lg xl:text-xl">
                     A software developer from India 🇮🇳. Also a student and
