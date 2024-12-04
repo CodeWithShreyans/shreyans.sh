@@ -13,7 +13,7 @@ export const SleepStatus = () => {
                 setStatus(v as "awake" | "asleep")
                 console.log(v)
             })
-        }, 5000)
+        }, 2000)
 
         return () => clearInterval(interval)
     }, [])
