@@ -93,7 +93,11 @@ const StackItem = ({
     title,
     description,
     image,
-}: { title: string; description: ReactNode; image: ReactElement }) => {
+}: {
+    title: string
+    description: ReactNode
+    image: ReactElement
+}) => {
     return (
         <CarouselItem>
             <GlowingStarsBackgroundCard className="relative" image={image}>
@@ -114,7 +118,7 @@ const Home = () => {
                             alt="Profile Picture"
                             className="!relative rounded-full"
                             fill={true}
-                            loading="lazy"
+                            loading="eager"
                             placeholder="blur"
                             src={ProfilePic}
                         />

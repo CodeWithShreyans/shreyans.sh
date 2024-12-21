@@ -16,8 +16,7 @@ const config = {
     transpilePackages: ["react-markdown", "remark-gfm", "@contentlayer/core"],
     experimental: {
         dynamicIO: false,
-        cssChunking: "loose",
-        // reactCompiler: true,
+        reactCompiler: true,
     },
 }
 
