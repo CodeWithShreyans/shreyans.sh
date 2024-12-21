@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode, Suspense } from "react"
+import type { ReactElement, ReactNode } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
