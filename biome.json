@@ -30,40 +30,9 @@
     "files": {
         "ignore": [
             "node_modules/*",
-            ".next/*",
-            ".contentlayer/*",
-            ".vercel/*",
             "app/components/shadcn/*",
             "app/components/aceternity/*",
             "package.json"
         ]
-    },
-    "overrides": [
-        {
-            "include": [
-                "**/page.tsx",
-                "**/layout.tsx",
-                "contentlayer.config.ts",
-                "global-error.tsx",
-                "next.config.mjs"
-            ],
-            "linter": {
-                "rules": {
-                    "style": {
-                        "noDefaultExport": "off"
-                    }
-                }
-            }
-        },
-        {
-            "include": ["app/env.mjs"],
-            "linter": {
-                "rules": {
-                    "style": {
-                        "useNamingConvention": "off"
-                    }
-                }
-            }
-        }
-    ]
+    }
 }
