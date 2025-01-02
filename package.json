@@ -3,13 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 3000",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --port 3000",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/react": "^4.1.2",
+    "@fontsource-variable/geist-mono": "^5.0.1",
+    "@fontsource/geist-sans": "^5.1.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@tailwindcss/vite": "^4.0.0-beta.8",
     "@types/react": "^19.0.2",
