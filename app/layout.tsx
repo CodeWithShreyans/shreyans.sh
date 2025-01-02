@@ -51,8 +51,9 @@ export const metadata: Metadata = {
         site: "@Destroyer_Xyz",
         title: siteConfig.name,
     },
-    // TODO: Languages
-    // alternates: {languages: {}}
+    other: {
+        "darkreader-lock": "",
+    },
 }
 
 export const viewport: Viewport = {
