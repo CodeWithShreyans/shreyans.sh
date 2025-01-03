@@ -11,7 +11,6 @@ export default defineConfig({
     },
     integrations: [react()],
     adapter: vercel(),
-    output: "server",
 
     env: {
         schema: {

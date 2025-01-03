@@ -1,6 +1,8 @@
 import { NOTION_WEBHOOK_SECRET } from "astro:env/server"
 import type { APIRoute } from "astro"
 
+export const prerender = false
+
 export const POST: APIRoute = async ({ request }) => {
     if (request.headers.get("content-type") !== "application/json")
         return new Response("Bad Request", { status: 400 })
