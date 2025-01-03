@@ -1,6 +1,13 @@
 import { Thought, db, eq } from "astro:db"
-import { NOTION_WEBHOOK_SECRET } from "astro:env/server"
+import {
+    NOTION_WEBHOOK_SECRET,
+    TWITTER_ACCESS_SECRET,
+    TWITTER_ACCESS_TOKEN,
+    TWITTER_APP_KEY,
+    TWITTER_APP_SECRET,
+} from "astro:env/server"
 import type { APIRoute } from "astro"
+import { TwitterApi } from "twitter-api-v2"
 import type { NotionWebhookRequest } from "./_types"
 
 export const prerender = false
@@ -39,9 +46,23 @@ export const POST: APIRoute = async ({ request }) => {
         date: new Date(data.properties.DateTime.date.start),
     })
 
+    const twitterClient = new TwitterApi({
+        accessToken: TWITTER_ACCESS_TOKEN,
+        accessSecret: TWITTER_ACCESS_SECRET,
+        appKey: TWITTER_APP_KEY,
+        appSecret: TWITTER_APP_SECRET,
+    }).readWrite.v2
+
+    console.log(
+        await twitterClient.tweetThread([
+            data.properties.Thought.title[0].plain_text,
+            `https://shreyans.sh/thought/${data.properties.Index.unique_id.number}`,
+        ]),
+    )
+
     console.log(await db.select().from(Thought))
 
-    return new Response("Good", { status: 200 })
+    return new Response(null, { status: 200 })
 }
 
 export const ALL: APIRoute = () =>

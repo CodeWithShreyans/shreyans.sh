@@ -25,6 +25,26 @@ export default defineConfig({
                 context: "server",
                 optional: false,
             }),
+            TWITTER_ACCESS_TOKEN: envField.string({
+                access: "secret",
+                context: "server",
+                optional: false,
+            }),
+            TWITTER_ACCESS_SECRET: envField.string({
+                access: "secret",
+                context: "server",
+                optional: false,
+            }),
+            TWITTER_APP_KEY: envField.string({
+                access: "secret",
+                context: "server",
+                optional: false,
+            }),
+            TWITTER_APP_SECRET: envField.string({
+                access: "secret",
+                context: "server",
+                optional: false,
+            }),
         },
     },
 })
