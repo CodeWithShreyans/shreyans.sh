@@ -1,7 +1,7 @@
 import { Thought, db, eq } from "astro:db"
 import { NOTION_WEBHOOK_SECRET } from "astro:env/server"
 import type { APIRoute } from "astro"
-import type { NotionWebhookRequest } from "./types"
+import type { NotionWebhookRequest } from "./_types"
 
 export const prerender = false
 

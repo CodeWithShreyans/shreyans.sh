@@ -16,7 +16,6 @@ export default defineConfig({
             exclude: ["/api/*"],
         },
     }),
-    output: "server",
 
     env: {
         schema: {

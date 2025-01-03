@@ -1,16 +1,12 @@
 ---
-import { Thought, db, desc } from "astro:db"
+import Thoughts from "../components/Thoughts.astro"
 import Layout from "../layouts/Layout.astro"
-
-const thoughts = await db.select().from(Thought).orderBy(desc(Thought.date))
 ---
 
 <Layout>
 	<main class="flex flex-col gap-2 *:not-last:border-b-2 *:pb-2 border-x-2">
 	    <h1>Hey I'm Shreyans!</h1>
 		<!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repellendus sapiente asperiores deleniti eligendi voluptates corrupti ipsam omnis velit quos? Repellat, suscipit. Odio laboriosam tenetur sunt, voluptas repellendus quisquam eos.</p> -->
-		{thoughts.map(({thought}) => {
-		  return <p>{thought}</p>
-		})}
 		</main>
+		<Thoughts server:defer/>
 </Layout>

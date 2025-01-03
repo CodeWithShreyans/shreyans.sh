@@ -1,0 +1,9 @@
+---
+import { Thought, db, desc } from "astro:db"
+
+const thoughts = await db.select().from(Thought).orderBy(desc(Thought.date))
+---
+
+{thoughts.map(({thought}) => {
+	return <p>{thought}</p>
+})}
