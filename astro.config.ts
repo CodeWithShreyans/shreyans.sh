@@ -11,10 +11,11 @@ export default defineConfig({
     },
     integrations: [react(), db()],
     adapter: vercel({
-        isr: {
-            expiration: 60,
-            exclude: ["/api/*"],
-        },
+        // TODO: Re-enable when https://github.com/withastro/astro/issues/12803 is fixed
+        // isr: {
+        //     expiration: 60,
+        //     exclude: ["/api/*"],
+        // },
     }),
 
     env: {
