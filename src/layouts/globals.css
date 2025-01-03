@@ -52,7 +52,6 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
-    --font-sans: "Geist Sans";
     --font-mono: "Geist Mono Variable";
 
     --animate-accordion-down: accordion-down 0.2s ease-out;
