@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
-    "build": "astro build",
+    "build": "astro build --remote",
     "preview": "astro preview --port 3000",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/db": "^0.14.5",
     "@astrojs/react": "^4.1.2",
     "@astrojs/vercel": "^8.0.1",
     "@fontsource-variable/geist-mono": "^5.0.1",
