@@ -6,15 +6,16 @@ import Header from "@/components/Header.astro"
 ---
 
 <!doctype html>
-<html lang="en" class="font-sans m-[0] w-full h-full bg-background p-4">
+<html lang="en" class="font-mono m-[0] w-full h-full bg-background tracking-wide">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="darkreader-lock"/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Shreyans Jain</title>
 	</head>
-	<Header/>
-	<body class="m-[0] w-full h-full">
+	<!-- <Header/> -->
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:p-[1ch]">
 		<slot />
 	</body>
 </html>

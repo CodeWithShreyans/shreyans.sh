@@ -33,11 +33,19 @@
         }
     },
     "files": {
-        "ignore": [
-            "node_modules/*",
-            "app/components/shadcn/*",
-            "app/components/aceternity/*",
-            "package.json"
-        ]
-    }
+        "ignore": ["node_modules/*", "app/components/*", "package.json"]
+    },
+    "overrides": [
+        {
+            "include": ["*.astro"],
+            "linter": {
+                "rules": {
+                    "style": {
+                        "useConst": "off",
+                        "useImportType": "off"
+                    }
+                }
+            }
+        }
+    ]
 }

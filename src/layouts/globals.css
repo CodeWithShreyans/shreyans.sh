@@ -76,6 +76,11 @@
     }
 }
 
+@utility full-bleed {
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
