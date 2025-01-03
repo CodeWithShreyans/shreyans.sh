@@ -1,15 +1,17 @@
-//
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, envField } from "astro/config"
 
 import react from "@astrojs/react"
 
+import vercel from "@astrojs/vercel"
+
 export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-
     integrations: [react()],
+    adapter: vercel(),
+    output: "server",
 
     env: {
         schema: {
