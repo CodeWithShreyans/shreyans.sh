@@ -1,7 +1,9 @@
 ---
 import "./globals.css"
+
+import { ClientRouter } from "astro:transitions"
+
 import "@fontsource-variable/geist-mono"
-import Header from "@/components/Header.astro"
 ---
 
 <!doctype html>
@@ -12,9 +14,11 @@ import Header from "@/components/Header.astro"
 		<meta name="darkreader-lock"/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Shreyans Jain</title>
+
+		<ClientRouter/>
 	</head>
-	<!-- <Header/> -->
-	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:p-[1ch]">
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:px-[1ch]">
+	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer" href="/">{"<- Home"}</a> : null}
 		<slot />
 	</body>
 </html>

@@ -4,9 +4,14 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-	<main class="flex flex-col gap-2 *:not-last:border-b-2 *:pb-2 border-x-2">
-	    <h1>Hey I'm Shreyans!</h1>
-		<!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem repellendus sapiente asperiores deleniti eligendi voluptates corrupti ipsam omnis velit quos? Repellat, suscipit. Odio laboriosam tenetur sunt, voluptas repellendus quisquam eos.</p> -->
+	<main class="flex flex-col gap-6 *:not-last:border-b-2 *:pb-6 border-x-2 pt-6">
+	    <h1 class="font-medium text-lg">Developer • Entrepreneur • Rationalist</h1>
+		<p>
+           I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>, I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
+        </p>
+        <p>
+            This website will show you what I've thought, what I've done and maybe even what I will do.
+        </p>
 		<Thoughts server:defer/>
 		</main>
 </Layout>

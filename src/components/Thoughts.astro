@@ -1,9 +1,34 @@
 ---
 import { Thought, db, desc } from "astro:db"
 
-const thoughts = await db.select().from(Thought).orderBy(desc(Thought.date))
----
+interface Props {
+    allThoughts?: boolean
+}
 
-{thoughts.map(({thought}) => {
-	return <p>{thought}</p>
-})}
+const { allThoughts = false } = Astro.props
+
+const thoughts = allThoughts
+    ? await db.select().from(Thought).orderBy(desc(Thought.index))
+    : await db.select().from(Thought).orderBy(desc(Thought.index)).limit(5)
+---
+<div class="flex flex-col gap-4">
+    <h2 class="text-lg">Inside my brain</h2>
+    <div class="flex flex-col gap-2">
+    {thoughts.map(({thought, date, index}) => {
+    	return (
+     <div class="flex justify-between">
+        <div class="flex gap-1">
+            <span class="tabular-nums">{index}.</span>
+            <q>{thought}</q>
+        </div>
+        <time datetime={date.toISOString()} class="text-sm text-muted-foreground">
+            {date.toString().slice(0,15)}
+            <br>
+            {`${date.toString().slice(16,21)} IST`}
+        </time>
+     </div>
+     )
+    })}
+    </div>
+    {!allThoughts ? <a href="/thoughts" class="text-sm hover:underline underline-offset-4 transition-all size-fit">{"Read more ->"}</a> : null}
+</div>
