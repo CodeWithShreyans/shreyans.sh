@@ -53,14 +53,10 @@ export const POST: APIRoute = async ({ request }) => {
         appSecret: TWITTER_APP_SECRET,
     }).readWrite.v2
 
-    console.log(
-        await twitterClient.tweetThread([
-            data.properties.Thought.title[0].plain_text,
-            `https://shreyans.sh/thought/${data.properties.Index.unique_id.number}`,
-        ]),
-    )
-
-    console.log(await db.select().from(Thought))
+    await twitterClient.tweetThread([
+        data.properties.Thought.title[0].plain_text,
+        `https://shreyans.sh/thought/${data.properties.Index.unique_id.number}`,
+    ])
 
     return new Response(null, { status: 200 })
 }

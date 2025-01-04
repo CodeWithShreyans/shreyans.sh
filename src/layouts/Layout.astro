@@ -3,7 +3,7 @@ import "./globals.css"
 
 import { ClientRouter } from "astro:transitions"
 
-import "@fontsource-variable/geist-mono"
+import GeistMono from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2"
 ---
 
 <!doctype html>
@@ -13,6 +13,7 @@ import "@fontsource-variable/geist-mono"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="darkreader-lock"/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preload" href={GeistMono} as="font" type="font/woff2" crossorigin="anonymous" />
 		<title>Shreyans Jain</title>
 
 		<ClientRouter/>
