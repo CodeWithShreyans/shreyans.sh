@@ -8,7 +8,7 @@ import { ClientRouter } from "astro:transitions"
 ---
 
 <!doctype html>
-<html lang="en" class="font-mono m-[0] w-full h-full bg-background tracking-wide">
+<html lang="en" class="font-mono m-[0] w-full h-full bg-background tracking-wide" transition:animate="initial">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -19,8 +19,8 @@ import { ClientRouter } from "astro:transitions"
 
 		<ClientRouter/>
 	</head>
-	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:px-[1ch]">
-	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer" href="/">{"<- Home"}</a> : null}
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:px-[1ch] overscroll-y-none">
+	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2]" href="/">{"<div>- Home"}</a> : null}
 		<slot />
 	</body>
 </html>

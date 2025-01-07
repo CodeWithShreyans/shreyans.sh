@@ -1,17 +1,64 @@
 ---
+import Projects from "@/components/Projects.astro"
 import Thoughts from "../components/Thoughts.astro"
 import Layout from "../layouts/Layout.astro"
+
+import GithubIcon from "@/assets/icons/github.svg?raw"
+import LinkedinIcon from "@/assets/icons/linkedin.svg?raw"
+import MailIcon from "@/assets/icons/mail.svg?raw"
+import XIcon from "@/assets/icons/x.svg?raw"
+
+interface ProfileLink {
+    title: string
+    href: string
+    Icon: string
+}
+
+const profileLinks: ProfileLink[] = [
+    {
+        title: "CodeWShreyans",
+        href: "https://twitter.com/Destroyer_Xyz",
+        Icon: XIcon,
+    },
+    {
+        title: "CodeWithShreyans",
+        href: "https://github.com/CodeWithShreyans",
+        Icon: GithubIcon,
+    },
+    {
+        title: "Shreyans Jain",
+        href: "https://www.linkedin.com/in/sjain07",
+        Icon: LinkedinIcon,
+    },
+    {
+        title: "shreyans@shreyans.sh",
+        href: "mailto:shreyans@shreyans.sh",
+        Icon: MailIcon,
+    },
+]
 ---
 
 <Layout>
-	<main class="flex flex-col gap-6 *:not-last:border-b-2 *:pb-6 border-x-2 pt-6">
+	<main class="flex flex-col gap-7 *:not-last:border-b-2 *:pb-7 border-x-2 pt-7">
 	    <h1 class="font-medium text-lg">Developer • Entrepreneur • Rationalist</h1>
-		<p>
-           I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>, I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
-        </p>
+		<div class="flex flex-col gap-3">
+    		<p>
+            I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>, I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
+            </p>
+            <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                { profileLinks.map(({ title, href, Icon }) => (
+                <a class="flex gap-2 [&_svg]:h-6 [&_svg]:fill-white items-center group h-7" href={href} target="_blank">
+                    <Fragment set:html={Icon}/>
+                    <span class="content-center group-hover:underline underline-offset-4 leading-relaxed">{title.replaceAll(" ", " ")}{" "}<span class="text-2xl font-thin">↗</span></span>
+                </a>
+                ))
+                }
+            </div>
+        </div>
         <p>
             This website will show you what I've thought, what I've done and maybe even what I will do.
         </p>
 		<Thoughts server:defer/>
-		</main>
+		<Projects/>
+	</main>
 </Layout>
