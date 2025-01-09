@@ -1,4 +1,6 @@
 ---
+import projectsJson from "./projects.json"
+
 interface Props {
     allProjects?: boolean
 }
@@ -6,62 +8,35 @@ interface Props {
 const { allProjects = false } = Astro.props
 
 interface Project {
+    index: number
     title: string
     description: string
-    tag: "pre-release" | "archived" | "borked"
+    tag?: "pre-release" | "archived" | "borked"
 }
-const projects: Project[] = [
-    {
-        title: "shreyans.sh",
-        description:
-            "My personal website, built with Astro and TypeScript. lorem ipsum",
-        tag: "pre-release",
-    },
-    {
-        title: "astro",
-        description: "A new kind of static site generator.",
-        tag: "archived",
-    },
-    {
-        title: "svelte",
-        description: "Cybernetically enhanced web apps.",
-        tag: "borked",
-    },
-    {
-        title: "shreyans.sh",
-        description:
-            "My personal website, built with Astro and TypeScript. lorem ipsum",
-        tag: "pre-release",
-    },
-    {
-        title: "astro",
-        description: "A new kind of static site generator.",
-        tag: "archived",
-    },
-    {
-        title: "svelte",
-        description: "Cybernetically enhanced web apps.",
-        tag: "borked",
-    },
-]
+const projects = projectsJson.map((project, index) => {
+    return { index: index + 1, ...project }
+}) as Project[]
 ---
 
 <div class="flex flex-col gap-5">
     <h2 class="text-lg">My Work</h2>
     <div class="flex flex-col-reverse gap-3">
-    {(allProjects ? projects : projects.slice(0, 3)).map(({title, description, tag}, index) => {
+    {(allProjects ? projects : projects.slice(-3)).map(({index, title, description, tag}) => {
     	return (
-     <div class="flex justify-between target:py-10 target:font-bold target:text-lg" id={(index+1).toString()}>
+     <div class="flex justify-between target:py-10 target:font-bold target:text-lg" id={index.toString()}>
         <div class="flex flex-col gap-1">
             <div class="flex gap-1">
-                <span class="tabular-nums">{index + 1}.</span>
+                <span class="tabular-nums">{index}.</span>
                 <span>{title}</span>
             </div>
             <p class="text-sm text-muted-foreground">{description}</p>
         </div>
+        { tag ?
         <div class="text-sm min-w-fit self-start bg-accent text-accent-foreground p-1.5 rounded-[0.5rem] overflow-hidden">
-            {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : "Borked"}
+            {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : tag === "borked" ? "Borked" : null}
         </div>
+        : null
+        }
      </div>
      )
     })}

@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Blockvote",
+        "description": "A POC polling app on the Polygon chain",
+        "tag": "archived"
+    },
+    {
+        "title": "Duelance",
+        "description": "My first startup, a revolutionary freelancer marketplace",
+        "tag": "archived"
+    },
+    {
+        "title": "The AI Chronicles",
+        "description": "A newsletter, curated by AI",
+        "tag": "archived"
+    },
+    {
+        "title": "Findy Thingy",
+        "description": "Search your emails with AI",
+        "tag": "archived"
+    },
+    {
+        "title": "Water Quality Tester",
+        "description": "Custom designed printed circuit board to test water quality"
+    },
+    {
+        "title": "upstash-kv",
+        "description": "Simple Upstash Redish client based on Vercel KV"
+    },
+    {
+        "title": "shreyans.sh",
+        "description": "This website, my personal corner of the web"
+    },
+    {
+        "title": "Evently",
+        "description": "Complete event manager for students"
+    },
+    {
+        "title": "Guider",
+        "description": "Offline access to crucial emergency guides",
+        "tag": "pre-release"
+    }
+]

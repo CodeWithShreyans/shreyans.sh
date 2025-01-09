@@ -1,7 +1,7 @@
 ---
 import Projects from "@/components/Projects.astro"
-import Thoughts from "../components/Thoughts.astro"
-import Layout from "../layouts/Layout.astro"
+import Thoughts from "@/components/Thoughts.astro"
+import Layout from "@/layouts/Layout.astro"
 
 import GithubIcon from "@/assets/icons/github.svg?raw"
 import LinkedinIcon from "@/assets/icons/linkedin.svg?raw"
@@ -58,7 +58,7 @@ const profileLinks: ProfileLink[] = [
         <p>
             This website will show you what I've thought, what I've done and maybe even what I will do.
         </p>
-		<Thoughts server:defer/>
-		<Projects/>
+        <Projects/>
+		<Thoughts/>
 	</main>
 </Layout>

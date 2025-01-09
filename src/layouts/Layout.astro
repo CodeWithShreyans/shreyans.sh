@@ -20,7 +20,7 @@ import { ClientRouter } from "astro:transitions"
 		<ClientRouter/>
 	</head>
 	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:px-[1ch] overscroll-y-none">
-	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2]" href="/">{"<div>- Home"}</a> : null}
+	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2]" href="/">{"<- Home"}</a> : null}
 		<slot />
 	</body>
 </html>

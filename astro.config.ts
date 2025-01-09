@@ -4,7 +4,7 @@ import { defineConfig, envField } from "astro/config"
 import db from "@astrojs/db"
 import vercel from "@astrojs/vercel"
 
-import partytown from "@astrojs/partytown";
+import partytown from "@astrojs/partytown"
 
 export default defineConfig({
     vite: {
@@ -12,11 +12,10 @@ export default defineConfig({
     },
     integrations: [db(), partytown()],
     adapter: vercel({
-        // TODO: Re-enable when https://github.com/withastro/astro/issues/12803 is fixed
-        // isr: {
-        //     expiration: 60,
-        //     exclude: ["/api/*"],
-        // },
+        isr: {
+            expiration: 60,
+            exclude: ["/api/*"],
+        },
     }),
 
     env: {
