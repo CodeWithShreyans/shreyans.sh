@@ -16,6 +16,7 @@ export default defineConfig({
             expiration: 60,
             exclude: ["/api/*"],
         },
+        imageService: true,
     }),
     output: "server",
 
