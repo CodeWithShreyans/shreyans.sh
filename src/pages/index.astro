@@ -1,4 +1,5 @@
 ---
+import ProfileImage from "@/components/ProfileImage.astro"
 import Projects from "@/components/Projects.astro"
 import Thoughts from "@/components/Thoughts.astro"
 import Layout from "@/layouts/Layout.astro"
@@ -39,6 +40,7 @@ const profileLinks: ProfileLink[] = [
 ---
 
 <Layout>
+    <ProfileImage/>
 	<main class="flex flex-col gap-7 *:not-last:border-b-2 *:pb-7 border-x-2 pt-7">
 	    <h1 class="font-medium text-lg">Developer • Entrepreneur • Rationalist</h1>
 		<div class="flex flex-col gap-3">

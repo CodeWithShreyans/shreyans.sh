@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets"
+
+import ProfilePic from "@/assets/profile-pictures/professional.jpg"
+---
+
+<!-- <script>
+    import { animate } from "motion"
+
+    // const imageDiv = document.getElementById("imageDiv")
+
+    animate("imageDiv", {
+      y: 1000
+    })
+</script> -->
+
+
+<div class="!col-[1] pt-14 h-fit flex items-center justify-center">
+    <Image src={ProfilePic} alt="Shreyans" class="rounded-full size-64" loading="lazy"/>
+</div>
