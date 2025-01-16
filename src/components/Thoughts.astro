@@ -16,7 +16,7 @@ const thoughts = allThoughts
     <div class="flex flex-col gap-3">
     {thoughts.map(({thought, date, index}) => {
     	return (
-     <div class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
+     <div class="flex justify-between gap-1.5 target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
         <div class="flex gap-1 w-[75%]">
             <span class="tabular-nums">{index}{"."}</span>
             <q>{thought}</q>
