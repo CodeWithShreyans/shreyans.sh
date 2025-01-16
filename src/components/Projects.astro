@@ -18,21 +18,21 @@ const projects = projectsJson.map((project, index) => {
 }) as Project[]
 ---
 
-<div class="flex flex-col gap-5">
-    <h2 class="text-lg">My Work</h2>
+<div class="flex flex-col gap-4">
+    <h2 class="text-lg max-sm:text-base font-semibold">My Work</h2>
     <div class="flex flex-col-reverse gap-3">
     {(allProjects ? projects : projects.slice(-3)).map(({index, title, description, tag}) => {
     	return (
-     <div class="flex justify-between target:py-10 target:font-bold target:text-lg" id={index.toString()}>
+     <div class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
         <div class="flex flex-col gap-1">
             <div class="flex gap-1">
                 <span class="tabular-nums">{index}.</span>
                 <span>{title}</span>
             </div>
-            <p class="text-sm text-muted-foreground">{description}</p>
+            <p class="text-sm max-sm:text-xs text-muted-foreground">{description}</p>
         </div>
         { tag ?
-        <div class="text-sm min-w-fit self-start bg-accent text-accent-foreground p-1.5 rounded-[0.5rem] overflow-hidden">
+        <div class="text-sm max-sm:text-xs min-w-fit self-start bg-accent text-accent-foreground p-1.5 rounded-[0.5rem] overflow-hidden">
             {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : tag === "borked" ? "Borked" : null}
         </div>
         : null

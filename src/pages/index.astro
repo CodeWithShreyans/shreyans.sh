@@ -40,25 +40,24 @@ const profileLinks: ProfileLink[] = [
 ---
 
 <Layout>
-    <ProfileImage/>
-	<main class="flex flex-col gap-7 *:not-last:border-b-2 *:pb-7 border-x-2 pt-7">
-	    <h1 class="font-medium text-lg">Developer • Entrepreneur • Rationalist</h1>
+	<main class="flex flex-col gap-6 *:not-last:border-b-2 *:not-last:pb-6 py-5">
+	    <!-- <h1 class="font-bold sm:text-lg max-sm:text-base">Developer | Entrepreneur | Rationalist</h1> -->
 		<div class="flex flex-col gap-3">
     		<p>
-            I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>, I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
+            Hey! I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>. I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
             </p>
-            <div class="grid grid-cols-2 grid-rows-2 gap-4">
+            <div class="grid grid-cols-2 grid-rows-2 gap-3">
                 { profileLinks.map(({ title, href, Icon }) => (
                 <a class="flex gap-2 [&_svg]:h-6 [&_svg]:fill-white items-center group h-7" href={href} target="_blank">
                     <Fragment set:html={Icon}/>
-                    <span class="content-center group-hover:underline underline-offset-4 leading-relaxed">{title.replaceAll(" ", " ")}{" "}<span class="text-2xl font-thin">↗</span></span>
+                    <span class="content-center group-hover:underline underline-offset-4 leading-relaxed max-sm:text-xs">{title.replaceAll(" ", " ")}{" "}{!href.includes("mailto") ? <span class="text-2xl font-thin max-sm:text-lg">↗</span> : null}</span>
                 </a>
                 ))
                 }
             </div>
         </div>
         <p>
-            This website will show you what I've thought, what I've done and maybe even what I will do.
+            Here you'll see what I’ve been thinking, doing, and maybe even what I’ll do next!
         </p>
         <Projects/>
 		<Thoughts/>

@@ -11,17 +11,17 @@ const thoughts = allThoughts
     ? await db.select().from(Thought).orderBy(desc(Thought.index))
     : await db.select().from(Thought).orderBy(desc(Thought.index)).limit(3)
 ---
-<div class="flex flex-col gap-5">
-    <h2 class="text-lg">Inside my brain</h2>
+<div class="flex flex-col gap-4">
+    <h2 class="text-lg max-sm:text-base font-semibold">Inside my brain</h2>
     <div class="flex flex-col gap-3">
     {thoughts.map(({thought, date, index}) => {
     	return (
-     <div class="flex justify-between target:py-10 target:font-bold target:text-lg" id={index.toString()}>
-        <div class="flex gap-1">
-            <span class="tabular-nums">{index}.</span>
+     <div class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
+        <div class="flex gap-1 w-[75%]">
+            <span class="tabular-nums">{index}{"."}</span>
             <q>{thought}</q>
         </div>
-        <time datetime={date.toISOString()} class="text-sm text-muted-foreground">
+        <time datetime={date.toISOString()} class="text-sm text-muted-foreground w-[25%]">
             {date.toString().slice(0,15)}
             <br>
             {`${date.toString().slice(16,21)} UTC`}
