@@ -4,13 +4,11 @@ import { defineConfig, envField } from "astro/config"
 import db from "@astrojs/db"
 import vercel from "@astrojs/vercel"
 
-import partytown from "@astrojs/partytown"
-
 export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [db(), partytown()],
+    integrations: [db()],
     adapter: vercel({
         isr: {
             expiration: 60,
