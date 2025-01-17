@@ -51,9 +51,6 @@ export const metadata: Metadata = {
         site: "@Destroyer_Xyz",
         title: siteConfig.name,
     },
-    other: {
-        "darkreader-lock": "",
-    },
 }
 
 export const viewport: Viewport = {
@@ -77,6 +74,9 @@ const RootLayout = ({
             lang="en"
             suppressHydrationWarning
         >
+            <head>
+                <meta name="darkreader-lock" />
+            </head>
             <body
                 className="flex h-fit min-h-screen flex-col items-center justify-between gap-2 px-4 text-base"
                 id="body"
