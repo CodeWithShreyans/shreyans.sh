@@ -7,7 +7,7 @@ import GeistMono from "@fontsource-variable/geist-mono/files/geist-mono-latin-wg
 import { ClientRouter } from "astro:transitions"
 ---
 
-<script defer type="text/partytown" src="https://umami.shreyans.sh/script.js" data-website-id="dc0e2c24-6cb6-47d2-90ec-3143d825ecd7"></script>
+<script defer type="text/partytown" src="https://umami.shreyans.sh/script.js" data-website-id="dc0e2c24-6cb6-47d2-90ec-3143d825ecd7"/>
 
 <!doctype html>
 <html lang="en" class="font-mono m-[0] w-full h-full bg-background tracking-wide" transition:animate="initial">
@@ -15,14 +15,16 @@ import { ClientRouter } from "astro:transitions"
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="darkreader-lock"/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)" />
 		<link rel="preload" href={GeistMono} as="font" type="font/woff2" crossorigin="anonymous" />
 		<title>Shreyans Jain</title>
 
 		<ClientRouter/>
 	</head>
-	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(67ch,100%)_1fr] *:col-[2] *:px-[1ch] overscroll-y-none max-sm:!text-sm">
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] *:col-[2] *:px-[2ch] overscroll-y-none max-sm:!text-sm">
 	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2]" href="/">{"<- Home"}</a> : null}
 		<slot />
+		<script defer src="https://cursor-party.codewithshreyans.partykit.dev"/>
 	</body>
 </html>
