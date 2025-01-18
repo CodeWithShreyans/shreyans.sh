@@ -1,0 +1,10 @@
+User-agent: *
+Disallow:
+
+User-agent: Googlebot
+Allow: /
+Max-Image-Preview: large
+Max-Snippet: -1
+Max-Video-Preview: -1
+
+Sitemap: https://shreyans.sh/sitemap-index.xml

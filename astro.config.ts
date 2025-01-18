@@ -4,11 +4,15 @@ import { defineConfig, envField } from "astro/config"
 import db from "@astrojs/db"
 import vercel from "@astrojs/vercel"
 
+import sitemap from "@astrojs/sitemap"
+
 export default defineConfig({
+    site: "https://shreyans.sh",
+
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [db()],
+    integrations: [db(), sitemap()],
     adapter: vercel({
         isr: {
             expiration: 60,

@@ -5,19 +5,69 @@ import "@fontsource-variable/geist-mono/index.css"
 import GeistMono from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2"
 
 import { ClientRouter } from "astro:transitions"
+
+import { type Props, SEO } from "astro-seo"
+
+const metadata: Props = {
+    title: "Shreyans Jain",
+    description: "Developer · Entrepreneur · Rationalist",
+    openGraph: {
+        basic: {
+            title: "Shreyans Jain",
+            type: "website",
+            url: "https://shreyans.sh",
+            image: "https://shreyans.sh/og.png",
+        },
+        optional: {
+            description: "Developer · Entrepreneur · Rationalist",
+            locale: "en_US",
+            siteName: "Shreyans Jain",
+        },
+        image: {
+            type: "image/png",
+            width: 1200,
+            height: 630,
+            alt: "Shreyans",
+        },
+    },
+    twitter: {
+        card: "summary_large_image",
+        creator: "@CodeWShreyans",
+        description: "Developer · Entrepreneur · Rationalist",
+        site: "@CodeWShreyans",
+        title: "Shreyans Jain",
+        image: "https://shreyans.sh/og.png",
+        imageAlt: "Shreyans",
+    },
+}
+
+const keywords = [
+    "Shreyans Jain",
+    "DestroyerXyz",
+    "CodeWithShreyans",
+    "Developer",
+    "Blog",
+    "Thoughts",
+    "Portfolio",
+]
 ---
 
 <!doctype html>
 <html lang="en" class="font-mono m-[0] w-full h-full bg-background tracking-wide" transition:animate="initial">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="darkreader-lock"/>
+		<meta name="keywords" content={keywords.join(", ")} />
+		<meta name="author" content="Shreyans Jain" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="icon" href="/favicon.ico" sizes="48x48" />
 		<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" sizes="any" />
 		<link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)" sizes="any" />
 		<link rel="preload" href={GeistMono} as="font" type="font/woff2" crossorigin="anonymous" />
 		<title>Shreyans Jain</title>
+
+		<SEO {...metadata}/>
 
 		<script is:inline defer src="https://umami.shreyans.sh/script.js" data-website-id="dc0e2c24-6cb6-47d2-90ec-3143d825ecd7"/>
 
