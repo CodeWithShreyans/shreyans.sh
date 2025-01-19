@@ -16,17 +16,19 @@ const thoughts = allThoughts
     <div class="flex flex-col gap-3">
     {thoughts.map(({thought, date, index}) => {
     	return (
-     <div class="flex justify-between gap-1.5 target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
+     <a href={`/thoughts#${index}`} class="flex justify-between gap-1.5 target:py-10 target:font-bold target:text-lg target:max-sm:text-base cursor-default" draggable={false} id={index.toString()}>
         <div class="flex gap-1 w-[75%]">
             <span class="tabular-nums">{index}{"."}</span>
-            <q>{thought}</q>
+            <div>
+                <q class={!allThoughts ? "line-clamp-1 max-sm:line-clamp-2" : null}>{thought}</q>
+            </div>
         </div>
         <time datetime={date.toISOString()} class="text-sm text-muted-foreground w-[25%]">
             {date.toString().slice(0,15)}
             <br>
             {`${date.toString().slice(16,21)} UTC`}
         </time>
-     </div>
+     </a>
      )
     })}
     </div>

@@ -71,7 +71,7 @@ const keywords = [
 		<ClientRouter/>
 	</head>
 	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] *:col-[2] *:px-[2ch] max-sm:!text-sm">
-	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2]" href="/">{"<- Home"}</a> : null}
+	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2] sm:sticky sm:top-0" href="/">{"<- Home"}</a> : null}
 		<slot />
 		<script is:inline defer src="https://cursor-party.codewithshreyans.partykit.dev/cursors.js"/>
 	</body>

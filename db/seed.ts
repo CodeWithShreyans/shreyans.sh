@@ -94,7 +94,8 @@ export default async function seed() {
         },
         {
             index: 19,
-            thought: "What is the purpose of the solar system?",
+            thought:
+                "What is the meaning of the solar system?What is the meaning of the solar system?What is the meaning of the solar system?What is the meaning of the solar system?What is the meaning of the solar system?",
             date: new Date(),
         },
         {
