@@ -11,6 +11,7 @@ interface Project {
     index: number
     title: string
     description: string
+    link: string
     tag?: "pre-release" | "archived" | "borked"
 }
 const projects = projectsJson.map((project, index) => {
@@ -21,13 +22,13 @@ const projects = projectsJson.map((project, index) => {
 <div class="flex flex-col gap-4">
     <h2 class="text-lg max-sm:text-base font-semibold">My Work</h2>
     <div class="flex flex-col-reverse gap-3">
-    {(allProjects ? projects : projects.slice(-3)).map(({index, title, description, tag}) => {
+    {(allProjects ? projects : projects.slice(-3)).map(({index, title, description,link, tag}) => {
     	return (
-     <div class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base" id={index.toString()}>
+     <a href={link} class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base hover:animate-pulse-slow group" id={index.toString()}>
         <div class="flex flex-col gap-1">
             <div class="flex gap-1">
                 <span class="tabular-nums">{index}.</span>
-                <span>{title}</span>
+                <span id="projectTitle" class="group-hover:underline underline-offset-4">{title}</span>
             </div>
             <p class="text-sm max-sm:text-xs text-muted-foreground">{description}</p>
         </div>
@@ -37,7 +38,7 @@ const projects = projectsJson.map((project, index) => {
         </div>
         : null
         }
-     </div>
+     </a>
      )
     })}
     </div>
