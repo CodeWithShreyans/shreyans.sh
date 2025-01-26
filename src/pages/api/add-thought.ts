@@ -55,7 +55,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     await twitterClient.tweetThread([
         data.properties.Thought.title[0].plain_text,
-        `https://shreyans.sh/thoughts/${data.properties.Index.unique_id.number}`,
+        `https://shreyans.sh/thoughts#${data.properties.Index.unique_id.number}`,
     ])
 
     return new Response(null, { status: 200 })
