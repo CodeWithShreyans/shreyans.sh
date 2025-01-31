@@ -11,13 +11,13 @@
   "dependencies": {
     "@astrojs/db": "^0.14.6",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vercel": "^8.0.4",
+    "@astrojs/vercel": "^8.0.5",
     "@fontsource-variable/geist-mono": "^5.0.1",
-    "@tailwindcss/vite": "^4.0.0",
-    "astro": "^5.1.9",
+    "@tailwindcss/vite": "^4.0.1",
+    "astro": "^5.2.1",
     "astro-seo": "^0.8.4",
-    "motion": "^11.18.2",
-    "tailwindcss": "^4.0.0",
+    "motion": "^12.0.6",
+    "tailwindcss": "^4.0.1",
     "twitter-api-v2": "^1.19.0"
   },
   "devDependencies": {
