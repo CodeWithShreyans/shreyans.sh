@@ -19,28 +19,25 @@ const projects = projectsJson.map((project, index) => {
 }) as Project[]
 ---
 
-<div class="flex flex-col gap-4">
-    <h2 class="text-lg max-sm:text-base font-semibold">My Work</h2>
+<div class="flex flex-col gap-6">
+    <h2 class="text-2xl max-sm:text-xl font-semibold">My Work</h2>
     <div class="flex flex-col-reverse gap-3">
     {(allProjects ? projects : projects.slice(-3)).map(({index, title, description,link, tag}) => {
     	return (
-     <a href={link} class="flex justify-between target:py-10 target:font-bold target:text-lg target:max-sm:text-base hover:animate-pulse-slow group" id={index.toString()}>
-        <div class="flex flex-col gap-1">
+     <a href={link} class="flex justify-between target:py-10 target:font-bold target:text-2xl target:max-sm:text-xl group" id={index.toString()}>
+        <div class="flex flex-col gap-1 group-hover:animate-pulse-slow">
             <div class="flex gap-1">
-                <span class="tabular-nums">{index}.</span>
-                <span id="projectTitle" class="group-hover:underline underline-offset-4">{title}</span>
+                <span class="tabular-nums text-lg">{index}.</span>
+                <span id="projectTitle" class="group-hover:underline underline-offset-4 text-lg">{title}</span>
             </div>
-            <p class="text-sm max-sm:text-xs text-muted-foreground">{description}</p>
+            <p class="text-base max-sm:text-sm text-muted-foreground">{description}</p>
         </div>
-        { tag ?
-        <div class="text-sm max-sm:text-xs min-w-fit self-start bg-accent text-accent-foreground p-1.5 rounded-[0.5rem] overflow-hidden">
-            {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : tag === "borked" ? "Borked" : null}
+        <div class="text-base max-sm:text-sm min-w-fit self-start bg-accent text-accent-foreground p-2 rounded-[0.5rem] overflow-hidden">
+            {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : tag === "borked" ? "Borked" : "Released"}
         </div>
-        : null
-        }
      </a>
      )
     })}
     </div>
-    {!allProjects ? <a href="/projects" class="text-sm hover:underline underline-offset-4 transition-all size-fit">{"Read more ->"}</a> : null}
+    {!allProjects ? <a href="/projects" class="text-lg hover:underline underline-offset-4 transition-all size-fit">{"Read more ->"}</a> : null}
 </div>

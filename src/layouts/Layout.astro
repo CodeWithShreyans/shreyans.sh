@@ -1,11 +1,12 @@
 ---
 import "./globals.css"
-import "@fontsource-variable/geist-mono/index.css"
+import "@fontsource-variable/fira-code/index.css"
 
-import GeistMono from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2"
+import Rubik from "@fontsource-variable/fira-code/files/fira-code-latin-wght-normal.woff2"
 
 import { ClientRouter } from "astro:transitions"
 
+import Header from "@/components/Header.astro"
 import { type Props, SEO } from "astro-seo"
 
 const metadata: Props = {
@@ -62,7 +63,7 @@ const keywords = [
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="icon" href="/favicon.ico" sizes="48x48" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
-		<link rel="preload" href={GeistMono} as="font" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" href={Rubik} as="font" type="font/woff2" crossorigin="anonymous" />
 
 		<SEO {...metadata}/>
 
@@ -70,8 +71,8 @@ const keywords = [
 
 		<ClientRouter/>
 	</head>
-	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] *:col-[2] *:px-[2ch] max-sm:!text-sm">
-	   {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2] sm:sticky sm:top-0" href="/">{"<- Home"}</a> : null}
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] *:col-[2] *:px-[1ch] max-sm:!text-lg">
+        {Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2] sm:sticky sm:top-0" href="/">{"<- Home"}</a> : <Header/>}
 		<slot />
 		<script is:inline defer src="https://cursor-party.codewithshreyans.partykit.dev/cursors.js"/>
 	</body>

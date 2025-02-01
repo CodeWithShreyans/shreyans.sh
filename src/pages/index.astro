@@ -40,25 +40,25 @@ const profileLinks: ProfileLink[] = [
 ---
 
 <Layout>
-	<main class="flex flex-col gap-6 *:not-last:border-b-2 *:not-last:pb-6 py-6">
+	<main class="flex flex-col gap-8 *:not-last:border-b-2 *:not-last:pb-8 pb-8">
 	    <!-- <h1 class="font-bold sm:text-lg max-sm:text-base">Developer | Entrepreneur | Rationalist</h1> -->
-		<div class="flex flex-col gap-3">
-    		<p>
-            Hey! I'm <span class="font-semibold underline underline-offset-2">Shreyans Jain</span>. I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
-            </p>
-            <div class="grid grid-cols-2 grid-rows-2 gap-3">
+		<div class="flex flex-col gap-5">
+    		<h1 class="text-xl">
+            Hey! I'm <span class="font-semibold underline underline-offset-2">Shreyans</span>. I build stuff and explore life. I think a lot and do at least 31.415926536% of it.
+            </h1>
+            <div class="grid grid-cols-2 grid-rows-2 max-sm:grid-rows-4 max-sm:grid-cols-1 gap-5 max-sm:gap-6">
                 { profileLinks.map(({ title, href, Icon }) => (
                 <a class="flex gap-2 [&_svg]:h-6 [&_svg]:fill-white items-center group h-7" href={href} target="_blank">
                     <Fragment set:html={Icon}/>
-                    <span class="content-center group-hover:underline underline-offset-4 leading-relaxed max-sm:text-xs">{title.replaceAll(" ", " ")}{" "}{!href.includes("mailto") ? <span class="text-2xl font-thin max-sm:text-lg">↗</span> : null}</span>
+                    <span class="content-center group-hover:underline underline-offset-4 leading-relaxed text-lg max-sm:text-base pb-1">{title.replaceAll(" ", " ")}{" "}<span class="text-4xl font-thin max-sm:text-2xl">↗</span></span>
                 </a>
                 ))
                 }
             </div>
         </div>
-        <p>
-            Here you'll see what I’ve been thinking, doing, and maybe even what I’ll do next!
-        </p>
+        <h2 class="text-lg">
+            Here you'll see what I’ve been thinking, doing, and even what I’ll do next!
+        </h2>
         <Projects/>
 		<Thoughts/>
 	</main>

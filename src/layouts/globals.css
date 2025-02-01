@@ -48,7 +48,7 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
-    --font-mono: "Geist Mono Variable";
+    --font-mono: "Fira Code Variable";
 
     --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
@@ -72,7 +72,7 @@
 
 @utility full-bleed {
     width: 100%;
-    grid-column: 1 / -1;
+    grid-column: 1 / -1 !important;
 }
 
 @layer base {
