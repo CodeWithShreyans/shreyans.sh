@@ -1,8 +1,8 @@
 ---
 import "./globals.css"
-import "@fontsource-variable/fira-code/index.css"
+import "@fontsource-variable/fira-code"
 
-import Rubik from "@fontsource-variable/fira-code/files/fira-code-latin-wght-normal.woff2"
+import FiraCode from "@fontsource-variable/fira-code/files/fira-code-latin-wght-normal.woff2?url"
 
 import { ClientRouter } from "astro:transitions"
 
@@ -63,7 +63,7 @@ const keywords = [
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="icon" href="/favicon.ico" sizes="48x48" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
-		<link rel="preload" href={Rubik} as="font" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" href={FiraCode} as="font" type="font/woff2" crossorigin="anonymous" />
 
 		<SEO {...metadata}/>
 
