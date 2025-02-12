@@ -60,9 +60,13 @@ const keywords = [
 		<meta name="darkreader-lock"/>
 		<meta name="keywords" content={keywords.join(", ")} />
 		<meta name="author" content="Shreyans Jain" />
+		<meta name="apple-mobile-web-app-title" content="Shreyans" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link rel="icon" href="/favicon.ico" sizes="48x48" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg"  sizes="any"/>
+        <link rel="shortcut icon" href="/favicon.ico" sizes="48x48"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 		<link rel="preload" href={FiraCode} as="font" type="font/woff2" crossorigin="anonymous" />
 
 		<SEO {...metadata}/>
