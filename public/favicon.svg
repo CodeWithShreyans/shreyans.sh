@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="597" height="860"><svg width="597" height="860" viewBox="0 0 597 860" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.248097 860V770.904L284.392 415.724L12.2881 90.6439V0.343944H581.78V96.664H272.352C254.693 96.664 233.021 96.664 207.336 96.664C182.453 96.664 163.591 96.2626 150.748 95.4599L397.568 388.032V420.54L124.26 763.68C154.761 763.68 184.059 763.68 212.152 763.68C241.048 762.877 271.549 762.476 303.656 762.476H596.228V860H0.248097Z" fill="black"></path>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1024" height="1024"><svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_5)">
+<path d="M174.219 964V812.632L454.059 488.272L185.667 198.256V55.7919H838.203V213.52H539.283C522.323 213.52 503.243 213.096 482.043 212.248C461.691 211.4 439.643 209.704 415.899 207.16L643.587 459.016V507.352L377.739 812.632C407.419 810.088 434.555 808.392 459.147 807.544C484.587 805.848 511.723 805 540.555 805H849.651V964H174.219Z" fill="black"></path>
+</g>
+<defs>
+<clipPath id="SvgjsClipPath1019">
+<rect width="1024" height="1024" fill="white"></rect>
+</clipPath>
+</defs>
 </svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
 @media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
 </style></svg>
