@@ -2,6 +2,11 @@
 
 > A personal website showcasing Shreyans' projects, thoughts, and explorations in technology and life.
 
+- [X Profile](https://twitter.com/CodeWShreyans)
+- [GitHub Profile](https://github.com/CodeWithShreyans)
+- [Linkedin Profile](https://www.linkedin.com/in/sjain07)
+- [Email](shreyans@shreyans.sh)
+
 - [Personal Reflections](https://shreyans.sh/thoughts): To share personal reflections and thoughts on various topics.
 - [My Work](https://shreyans.sh/projects): Showcases various personal projects developed by Shreyans.
 - [OThree AI Chat App](https://shreyans.sh/othree): Promote the OThree app for private, offline AI chat using LLaMA 3 on Apple devices.
