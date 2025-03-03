@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+h1 {
+    @apply font-black text-3xl;
+}
+
+h2 {
+    @apply font-extrabold text-2xl;
+}
+
+h3 {
+    @apply font-bold text-xl;
+}
+
+h4 {
+    @apply font-medium text-lg;
+}
