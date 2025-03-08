@@ -1,4 +1,4 @@
-import { withSentryConfig } from "@sentry/nextjs"
+// import { withSentryConfig } from "@sentry/nextjs"
 import { withContentlayer } from "next-contentlayer2"
 
 /**
@@ -32,4 +32,5 @@ const sentryConfig = {
     silent: true,
 }
 
-export default withSentryConfig(withContentlayer(config), sentryConfig)
+// export default withSentryConfig(withContentlayer(config), sentryConfig)
+export default withContentlayer(config)
