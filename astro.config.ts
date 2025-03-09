@@ -13,7 +13,12 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [db(), sitemap()],
+    integrations: [
+        db(),
+        sitemap({
+            filter: (page) => !page.includes("/legal/"),
+        }),
+    ],
     adapter: vercel({
         isr: {
             expiration: 60,
