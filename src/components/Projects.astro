@@ -32,8 +32,8 @@ const projects = projectsJson.map((project, index) => {
             </div>
             <p class="text-base max-sm:text-sm text-muted-foreground">{description}</p>
         </div>
-        <div class="text-base max-sm:text-sm min-w-fit self-start bg-accent text-accent-foreground p-2 rounded-[0.5rem] overflow-hidden">
-            {tag === "pre-release" ? "Pre-release" : tag === "archived" ? "Archived" : tag === "borked" ? "Borked" : "Released"}
+        <div class="text-base max-sm:text-sm min-w-fit self-start bg-accent text-accent-foreground p-2 rounded-[0.5rem] overflow-hidden capitalize">
+            {tag ?? "Released"}
         </div>
      </a>
      )
