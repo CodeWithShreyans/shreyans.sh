@@ -75,7 +75,7 @@ const keywords = [
 
 		<ClientRouter/>
 	</head>
-	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] *:col-[2] *:px-[1ch] max-sm:!text-lg">
+	<body class="m-[0] w-full h-full text-pretty grid grid-cols-[1fr_min(68ch,100%)_1fr] grid-rows-[minmax(auto,10%)_1fr] *:col-[2] *:px-[1ch] max-sm:!text-lg">
         {!Astro.url.pathname.startsWith("/legal") ? Astro.url.pathname !== "/" ? <a class="!col-[1] pt-2 hover:underline underline-offset-4 size-fit cursor-pointer max-sm:!col-[2] sm:sticky sm:top-0" href="/">{"<- Home"}</a> : <Header/> : null}
 		<slot />
 		<script is:inline defer src="https://cursor-party.codewithshreyans.partykit.dev/cursors.js"/>

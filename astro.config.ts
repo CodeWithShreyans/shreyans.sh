@@ -1,7 +1,5 @@
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, envField } from "astro/config"
-
-import db from "@astrojs/db"
 import vercel from "@astrojs/vercel"
 
 import sitemap from "@astrojs/sitemap"
@@ -14,7 +12,6 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
     integrations: [
-        db(),
         sitemap({
             filter: (page) => !page.includes("/legal/"),
         }),
