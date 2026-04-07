@@ -2,7 +2,7 @@
 
 > A personal website showcasing Shreyans' projects, thoughts, and explorations in technology and life.
 
-- [X Profile](https://twitter.com/CodeWShreyans)
+- [X Profile](https://twitter.com/shreyansj)
 - [GitHub Profile](https://github.com/CodeWithShreyans)
 - [Linkedin Profile](https://www.linkedin.com/in/sjain07)
 - [Email](shreyans@shreyans.sh)

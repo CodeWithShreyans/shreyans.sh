@@ -9,20 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
-    "@astrojs/vercel": "^8.2.0",
-    "@fontsource-variable/fira-code": "^5.2.6",
-    "@tailwindcss/vite": "^4.1.10",
-    "astro": "^5.10.1",
-    "astro-seo": "^0.8.4",
-    "motion": "^12.19.1",
-    "tailwindcss": "^4.1.10",
-    "twitter-api-v2": "^1.23.2"
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/vercel": "^8.2.11",
+    "@fontsource-variable/fira-code": "^5.2.7",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^5.18.1",
+    "astro-seo": "^1.1.0",
+    "motion": "^12.38.0",
+    "tailwindcss": "^4.2.2",
+    "twitter-api-v2": "^1.29.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.10",
     "@total-typescript/ts-reset": "^0.6.1",
     "@total-typescript/tsconfig": "^1.0.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
